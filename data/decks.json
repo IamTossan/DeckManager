@@ -1,0 +1,14 @@
+[
+  {
+    "name": "deck 1",
+    "deck": ["Arrow", "Bomber", "Archers", "Knight", "Musketeer", "Baby Dragon", "Prince", "Fireball"]
+  },
+  {
+    "name": "deck 2",
+    "deck": ["Arrow", "Mini P.E.K.K.A", "Skeleton Army", "Knight", "Musketeer", "Baby Dragon", "Witch", "Fireball"]
+  },
+  {
+    "name": "deck 3",
+    "deck": ["Arrow", "Bomber", "Archers", "Mini P.E.K.K.A", "Musketeer", "Giant", "Prince", "Fireball"]
+  }
+]

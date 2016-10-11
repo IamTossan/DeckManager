@@ -1,0 +1,11 @@
+<div id="cards">
+  <ul>
+    <li ng-repeat="card in cards | orderBy: 'elixir'">
+
+      <img ng-src="{{card.thumb}}" />
+      
+      <h3>{{card.name}}</h3>
+
+    </li>
+  </ul>
+</div>

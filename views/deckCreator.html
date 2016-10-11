@@ -1,0 +1,33 @@
+<div id="deck-creator">
+  <div id="creator">
+
+    <form ng-submit="addDeck()" name="createDeckForm" novalidate>
+      <input type="text" ng-model="newDeck.name" name="deckName" placeholder="Deck name" ng-required="true" />
+
+      <p ng-show="newDeck.deck.length == 8 && createDeckForm.deckName.$invalid">&#8678;   Enter a deck name</p>
+      <p ng-show="newDeck.deck.length == 0">Click on any card</p>
+      <p ng-show="newDeck.deck.length < 8 && newDeck.deck.length > 0">You need {{8 - newDeck.deck.length}} more card<span ng-show="newDeck.deck.length < 7">s</span></p>
+      <input type="submit" value="Save" ng-disabled="createDeckForm.$invalid || newDeck.deck.length != 8"/>
+      <ul>
+        <li ng-repeat="card in newDeck.deck" ng-click="removeCard(card)">
+          <img ng-src="{{findThumb(card)}}" />
+        </li>
+      </ul>
+
+    </form>
+
+  </div>
+
+  <div id="cards">
+    <ul>
+      <li ng-repeat="card in cards | orderBy: 'elixir' ">
+
+        <img ng-src="{{card.thumb}}" ng-click="addCard(card.name)" />
+
+        <h3>{{card.name}}</h3>
+
+      </li>
+    </ul>
+  </div>
+
+</div>

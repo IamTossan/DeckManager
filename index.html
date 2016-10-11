@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myCRDeckApp">
+  <head>
+    <base href="/" />
+    <title>Clash Royale - Deck Manager</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="content/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
+    <script src="app\app.js"></script>
+    <script>
+      document.createElement( "picture" );
+    </script>
+    <script src="app\lib\picturefill.min.js" ></script>
+    <link rel="shortcut icon" href="content\images\favicon.ico">
+  </head>
+  <body>
+
+    <div id="wrapper">
+      <header ng-include="'header.html'"></header>
+      <main ng-view></main>
+      <footer ng-include="'footer.html'"></footer>
+    </div>
+
+  </body>
+</html>
