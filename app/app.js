@@ -73,6 +73,18 @@ myCRDeckApp.controller('DeckController', ['$scope', '$http', '$location', 'deckS
 
   $scope.decks = deckService.decks;
   $scope.newDeck = deckService.newDeck;
+  $scope.arenaName = [
+    "Training Camp",
+    "Arena 1 : Goblin Stadium",
+    "Arena 2 : Bone Pit",
+    "Arena 3 : Barbarian Bowl",
+    "Arena 4 : P.E.K.K.A's Playhouse",
+    "Arena 5 : Spell Valley",
+    "Arena 6 : Builder's Workshop",
+    "Arena 7 : Royal Arena",
+    "Arena 8 : Frozen Peak",
+    "Arena 9 : Legendary Arena"
+  ];
 
   $scope.findThumb = function(cardInput){
     var thumb = "";

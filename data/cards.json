@@ -3,143 +3,347 @@
 	"elixir": 3,
 	"arena": 0,
 	"type": "spell",
-	"thumb": "content/images/cards/arrows.jpg"
+	"thumb": "content/images/cards/arrows.png"
 }, {
 	"name": "Bomber",
 	"elixir": 3,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/bomber.jpg"
+	"thumb": "content/images/cards/bomber.png"
 }, {
 	"name": "Archers",
 	"elixir": 3,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/archers.jpg"
+	"thumb": "content/images/cards/archers.png"
 }, {
 	"name": "Knight",
 	"elixir": 3,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/knight.jpg"
+	"thumb": "content/images/cards/knight.png"
 }, {
 	"name": "Fireball",
 	"elixir": 3,
 	"arena": 0,
 	"type": "spell",
-	"thumb": "content/images/cards/fireball.jpg"
+	"thumb": "content/images/cards/fireball.png"
 }, {
 	"name": "Mini P.E.K.K.A",
 	"elixir": 4,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/minipekka.jpg"
+	"thumb": "content/images/cards/mini_PEKKA.png"
 }, {
 	"name": "Musketeer",
 	"elixir": 4,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/musketeer.jpg"
+	"thumb": "content/images/cards/musketeer.png"
 }, {
 	"name": "Giant",
 	"elixir": 5,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/giant.jpg"
+	"thumb": "content/images/cards/giant.png"
 }, {
 	"name": "Prince",
 	"elixir": 5,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/prince.jpg"
+	"thumb": "content/images/cards/prince.png"
 }, {
 	"name": "Baby Dragon",
 	"elixir": 4,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/babydragon.jpg"
+	"thumb": "content/images/cards/baby_dragon.png"
 }, {
 	"name": "Skeleton Army",
 	"elixir": 4,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/skeletonarmy.jpg"
+	"thumb": "content/images/cards/skeleton_army.png"
 }, {
 	"name": "Witch",
 	"elixir": 5,
 	"arena": 0,
 	"type": "troop",
-	"thumb": "content/images/cards/witch.jpg"
+	"thumb": "content/images/cards/witch.png"
 }, {
 	"name": "Spear Goblins",
 	"elixir": 2,
 	"arena": 1,
 	"type": "troop",
-	"thumb": "content/images/cards/speargoblins.jpg"
+	"thumb": "content/images/cards/spear_goblins.png"
 }, {
 	"name": "Goblins",
 	"elixir": 2,
 	"arena": 1,
 	"type": "troop",
-	"thumb": "content/images/cards/goblins.jpg"
+	"thumb": "content/images/cards/goblins.png"
 }, {
 	"name": "Goblin Hut",
 	"elixir": 5,
 	"arena": 1,
 	"type": "building",
-	"thumb": "content/images/cards/goblinhut.jpg"
+	"thumb": "content/images/cards/goblin_hut.png"
 }, {
 	"name": "Valkyrie",
 	"elixir": 4,
 	"arena": 1,
 	"type": "troop",
-	"thumb": "content/images/cards/valkyrie.jpg"
+	"thumb": "content/images/cards/valkyrie.png"
 }, {
 	"name": "Lightning",
 	"elixir": 6,
 	"arena": 1,
 	"type": "spell",
-	"thumb": "content/images/cards/lightning.jpg"
+	"thumb": "content/images/cards/lightning.png"
 }, {
 	"name": "Goblin Barrel",
 	"elixir": 3,
 	"arena": 1,
 	"type": "spell",
-	"thumb": "content/images/cards/goblinbarrel.jpg"
+	"thumb": "content/images/cards/goblin_barrel.png"
 }, {
 	"name": "Skeletons",
 	"elixir": 1,
 	"arena": 2,
 	"type": "troop",
-	"thumb": "content/images/cards/skeletons.jpg"
+	"thumb": "content/images/cards/skeletons.png"
 }, {
 	"name": "Minions",
 	"elixir": 3,
 	"arena": 2,
 	"type": "troop",
-	"thumb": "content/images/cards/minions.jpg"
+	"thumb": "content/images/cards/minions.png"
 }, {
 	"name": "Tombstone",
 	"elixir": 3,
 	"arena": 2,
 	"type": "building",
-	"thumb": "content/images/cards/tombstone.jpg"
+	"thumb": "content/images/cards/tombstone.png"
 }, {
 	"name": "Bomb Tower",
 	"elixir": 5,
 	"arena": 2,
 	"type": "building",
-	"thumb": "content/images/cards/bombtower.jpg"
+	"thumb": "content/images/cards/bomb_tower.png"
 }, {
 	"name": "Giant Skeleton",
 	"elixir": 6,
 	"arena": 2,
 	"type": "troop",
-	"thumb": "content/images/cards/giantskeleton.jpg"
+	"thumb": "content/images/cards/giant_skeleton.png"
 }, {
 	"name": "Balloon",
 	"elixir": 5,
 	"arena": 2,
 	"type": "troop",
-	"thumb": "content/images/cards/balloon.jpg"
+	"thumb": "content/images/cards/balloon.png"
+}, {
+	"name": "Cannon",
+	"elixir": 3,
+	"arena": 3,
+	"type": "building",
+	"thumb": "content/images/cards/cannon.png"
+}, {
+	"name": "Barbarians",
+	"elixir": 5,
+	"arena": 3,
+	"type": "troop",
+	"thumb": "content/images/cards/barbarians.png"
+}, {
+	"name": "Rocket",
+	"elixir": 6,
+	"arena": 3,
+	"type": "spell",
+	"thumb": "content/images/cards/rocket.png"
+}, {
+	"name": "Barbarian Hut",
+	"elixir": 7,
+	"arena": 3,
+	"type": "building",
+	"thumb": "content/images/cards/barbarian_hut.png"
+}, {
+	"name": "Rage",
+	"elixir": 2,
+	"arena": 3,
+	"type": "spell",
+	"thumb": "content/images/cards/rage.png"
+}, {
+	"name": "X-Bow",
+	"elixir": 6,
+	"arena": 3,
+	"type": "building",
+	"thumb": "content/images/cards/x-bow.png"
+}, {
+	"name": "Tesla",
+	"elixir": 4,
+	"arena": 4,
+	"type": "building",
+	"thumb": "content/images/cards/tesla.png"
+}, {
+	"name": "Minion Horde",
+	"elixir": 5,
+	"arena": 4,
+	"type": "troop",
+	"thumb": "content/images/cards/minion_horde.png"
+}, {
+	"name": "Inferno Tower",
+	"elixir": 5,
+	"arena": 4,
+	"type": "building",
+	"thumb": "content/images/cards/inferno_tower.png"
+}, {
+	"name": "Hog Rider",
+	"elixir": 4,
+	"arena": 4,
+	"type": "troop",
+	"thumb": "content/images/cards/hog_rider.png"
+}, {
+	"name": "Freeze",
+	"elixir": 4,
+	"arena": 4,
+	"type": "spell",
+	"thumb": "content/images/cards/freeze.png"
+}, {
+	"name": "P.E.K.K.A",
+	"elixir": 7,
+	"arena": 4,
+	"type": "troop",
+	"thumb": "content/images/cards/PEKKA.png"
+}, {
+	"name": "Lava Hound",
+	"elixir": 7,
+	"arena": 4,
+	"type": "troop",
+	"thumb": "content/images/cards/lava_hound.png"
+}, {
+	"name": "Zap",
+	"elixir": 2,
+	"arena": 5,
+	"type": "spell",
+	"thumb": "content/images/cards/zap.png"
+}, {
+	"name": "Fire Spirits",
+	"elixir": 2,
+	"arena": 5,
+	"type": "troop",
+	"thumb": "content/images/cards/fire_spirits.png"
+}, {
+	"name": "Furnace",
+	"elixir": 4,
+	"arena": 5,
+	"type": "building",
+	"thumb": "content/images/cards/furnace.png"
+}, {
+	"name": "Wizard",
+	"elixir": 5,
+	"arena": 5,
+	"type": "troop",
+	"thumb": "content/images/cards/wizard.png"
+}, {
+	"name": "Poison",
+	"elixir": 4,
+	"arena": 5,
+	"type": "spell",
+	"thumb": "content/images/cards/poison.png"
+}, {
+	"name": "Mirror",
+	"elixir": 0,
+	"arena": 5,
+	"type": "spell",
+	"thumb": "content/images/cards/mirror.png"
+}, {
+	"name": "Ice Wizard",
+	"elixir": 3,
+	"arena": 5,
+	"type": "troop",
+	"thumb": "content/images/cards/ice_wizard.png"
+}, {
+	"name": "Mortar",
+	"elixir": 4,
+	"arena": 6,
+	"type": "building",
+	"thumb": "content/images/cards/mortar.png"
+}, {
+	"name": "Elixir Collector",
+	"elixir": 5,
+	"arena": 6,
+	"type": "building",
+	"thumb": "content/images/cards/elixir_collector.png"
+}, {
+	"name": "Golem",
+	"elixir": 8,
+	"arena": 6,
+	"type": "troop",
+	"thumb": "content/images/cards/golem.png"
+}, {
+	"name": "The Log",
+	"elixir": 2,
+	"arena": 6,
+	"type": "spell",
+	"thumb": "content/images/cards/the_log.png"
+}, {
+	"name": "Sparky",
+	"elixir": 6,
+	"arena": 6,
+	"type": "troop",
+	"thumb": "content/images/cards/sparky.png"
+}, {
+	"name": "Miner",
+	"elixir": 3,
+	"arena": 6,
+	"type": "troop",
+	"thumb": "content/images/cards/miner.png"
+}, {
+	"name": "Royal Giant",
+	"elixir": 6,
+	"arena": 7,
+	"type": "troop",
+	"thumb": "content/images/cards/royal_giant.png"
+}, {
+	"name": "Three Musketeers",
+	"elixir": 9,
+	"arena": 7,
+	"type": "troop",
+	"thumb": "content/images/cards/three_musketeers.png"
+}, {
+	"name": "Dark Prince",
+	"elixir": 4,
+	"arena": 7,
+	"type": "troop",
+	"thumb": "content/images/cards/dark_prince.png"
+}, {
+	"name": "Guards",
+	"elixir": 3,
+	"arena": 7,
+	"type": "troop",
+	"thumb": "content/images/cards/guards.png"
+}, {
+	"name": "Princess",
+	"elixir": 3,
+	"arena": 6,
+	"type": "troop",
+	"thumb": "content/images/cards/princess.png"
+}, {
+	"name": "Ice Spirit",
+	"elixir": 1,
+	"arena": 8,
+	"type": "troop",
+	"thumb": "content/images/cards/ice_spirit.png"
+}, {
+	"name": "Bowler",
+	"elixir": 5,
+	"arena": 8,
+	"type": "troop",
+	"thumb": "content/images/cards/bowler.png"
+}, {
+	"name": "Lumberjack",
+	"elixir": 4,
+	"arena": 8,
+	"type": "troop",
+	"thumb": "content/images/cards/lumberjack.png"
 }]

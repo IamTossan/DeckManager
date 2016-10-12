@@ -18,16 +18,29 @@
 
   </div>
 
-  <div id="cards">
+  <div id="cards" ng-init="troop='troop'; spell='spell'; building='building'; arena=9">
+    <div id="cardFilter">
+      <input type="text" ng-model="myFilter" />
+      <button ng-click="myOrder = 'elixir'" >Elixir</button>
+      <button ng-click="myOrder = 'name'" >Name</button>
+      <button ng-click="myOrder = 'arena'" >Arena</button>
+      <input type="checkbox" ng-click="troop = (troop == 'zz') ? 'troop' : 'zz'" value="Troop" checked/><label>Troop</label>
+      <input type="checkbox" ng-click="spell = (spell == 'zz') ? 'spell' : 'zz'" value="Spell" checked/><label>Spell</label>
+      <input type="checkbox" ng-click="building = (building == 'zz') ? 'building' : 'zz'" value="Building" checked/><label>Building</label>
+      <input type="range" min=0 max=9 ng-model="arena"/><label>{{arenaName[arena]}}</label>
+    </div>
+
     <ul>
-      <li ng-repeat="card in cards | orderBy: 'elixir' ">
-
-        <img ng-src="{{card.thumb}}" ng-click="addCard(card.name)" />
-
+      <li ng-repeat="card in cards | orderBy: myOrder | filter: myFilter" ng-show="card.arena <= arena && (card.type.includes(troop) || card.type.includes(spell) || card.type.includes(building))">
+        <div>
+          <img ng-src="{{card.thumb}}" />
+          <p>{{card.elixir}}</p>
+        </div>
         <h3>{{card.name}}</h3>
 
       </li>
     </ul>
   </div>
+
 
 </div>
