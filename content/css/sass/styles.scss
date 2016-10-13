@@ -146,24 +146,25 @@ footer {
     margin: 20px auto;
     color: $blue;
     font-family: clash;
+    font-size: 0.8em;
   }
 
   @include mQ($large) {
     p {
-      font-size: 0.8em;
+      font-size: 0.6em;
       width: 80%;
     }
   }
 
   @include mQ($medium) {
     p {
-      font-size: 0.6em;
+      font-size: 0.4em;
     }
   }
 
   @include mQ($small) {
     p {
-      font-size: 0.4em;
+      font-size: 0.3em;
     }
   }
 }
@@ -279,6 +280,7 @@ footer {
   }
 
   @include mQ($medium){
+    padding-top: 0;
     li {
       width: (100%/5);
       margin: 5px auto 15px;
@@ -317,8 +319,9 @@ footer {
 #cardFilter {
 
   height: 40px;
-  margin: 0 auto;
+  margin: 10px auto 0;
   &.fixIt {
+    margin: 0 auto;
     position: fixed;
     top: 5px;
 
@@ -353,7 +356,6 @@ footer {
       &:focus {
         outline: none;
       }
-
     }
     img {
       position: absolute;
@@ -384,7 +386,6 @@ footer {
   div:nth-child(3){
     display: inline-block;
     width: 150px;
-
   }
   div:nth-child(4){
     width: 250px;
@@ -402,7 +403,6 @@ footer {
       display: inline-block;
     }
     @import 'slide';
-
   }
   img {
     height: 20px;
@@ -418,7 +418,6 @@ footer {
     div:nth-child(1){
       width: 150px;
       padding: 5px;
-
       input {
         width: 115px;
         margin-left: 20px;
@@ -495,9 +494,7 @@ footer {
         left: 83px;
       }
       @import "slideMedium";
-
     }
-
   }
   @include mQ($small) {
     width: 300px;
@@ -509,8 +506,6 @@ footer {
     div:nth-child(1){
       width: 60px;
       padding: 3px;
-
-
       input {
         width: 45px;
         margin-left: 7px;
@@ -551,12 +546,114 @@ footer {
         font-size: 0.3em;
         top: -6px;
         left: 5px;
-
       }
       @import "slideSmall";
+    }
+  }
+}
+
+/*********** CONTACT ********/
+
+#contact {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #4065b5;
+  padding: 20px;
+  border-radius: 20px;
+  h2 {
+    margin-left: 50px;
+    display:block;
+    width: 80%;
+    border-bottom: 1px solid #000;
+
+  }
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
+  #contact-info {
+    list-style-type: none;
+    margin-left: 10%;
+
+    img {
+      position: relative;
+      left: -10px;
+      top: 3px;
+    }
+    li:last-child {
+      position: relative;
+      left: 20px;
+      top: 3px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &> a {
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    display: block;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  @include mQ($large) {
+
+    width: 80%;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 0.8em;
 
 
+
+  }
+  @include mQ($medium){
+    padding: 10px;
+    font-size: 0.65em;
+    h2 {
+      width: 75%;
+    }
+    img {
+      height: 15px;
+      width: 15px;
+    }
+    #contact-info li:last-child {
+      left: 15px;
+    }
+    &> a {
+      width: 120px;
+      padding: 10px;
+      border: 1px solid #000;
     }
 
+  }
+  @include mQ($small){
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 0.5em;
+    img {
+      height: 10px;
+      width: 10px;
+    }
+    #contact-info li:last-child {
+      left: 10px;
+    }
+
+    &> a {
+      width: 100px;
+      padding: 5px;
+    }
   }
 }
