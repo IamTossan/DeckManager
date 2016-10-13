@@ -1,34 +1,35 @@
 <div id="deck-creator">
-  <div id="creator">
+  <div id="cardFilter">
+    <div id="creator">
+      <form ng-submit="addDeck()" name="createDeckForm" novalidate>
+        <input type="text" ng-model="newDeck.name" name="deckName" placeholder="Deck name" ng-required="true" />
 
-    <form ng-submit="addDeck()" name="createDeckForm" novalidate>
-      <input type="text" ng-model="newDeck.name" name="deckName" placeholder="Deck name" ng-required="true" />
+        <p ng-show="newDeck.deck.length == 8 && createDeckForm.deckName.$invalid">&#8678;   Enter a deck name</p>
+        <p ng-show="newDeck.deck.length == 0">Click on any card</p>
+        <p ng-show="newDeck.deck.length < 8 && newDeck.deck.length > 0">You need {{8 - newDeck.deck.length}} more card<span ng-show="newDeck.deck.length < 7">s</span></p>
+        <input type="submit" value="Save" ng-disabled="createDeckForm.$invalid || newDeck.deck.length != 8"/>
+        <ul>
+          <li ng-repeat="card in newDeck.deck" ng-click="removeCard(card)">
+            <img ng-src="{{findThumb(card)}}" />
+          </li>
+        </ul>
+      </form>
+    </div>
 
-      <p ng-show="newDeck.deck.length == 8 && createDeckForm.deckName.$invalid">&#8678;   Enter a deck name</p>
-      <p ng-show="newDeck.deck.length == 0">Click on any card</p>
-      <p ng-show="newDeck.deck.length < 8 && newDeck.deck.length > 0">You need {{8 - newDeck.deck.length}} more card<span ng-show="newDeck.deck.length < 7">s</span></p>
-      <input type="submit" value="Save" ng-disabled="createDeckForm.$invalid || newDeck.deck.length != 8"/>
-      <ul>
-        <li ng-repeat="card in newDeck.deck" ng-click="removeCard(card)">
-          <img ng-src="{{findThumb(card)}}" />
-        </li>
-      </ul>
-
-    </form>
-
-  </div>
-
-  <div id="cards" ng-init="troop='troop'; spell='spell'; building='building'; arena=9">
-    <div id="cardFilter">
+    <div>
       <input type="text" ng-model="myFilter" />
       <button ng-click="myOrder = 'elixir'" >Elixir</button>
       <button ng-click="myOrder = 'name'" >Name</button>
       <button ng-click="myOrder = 'arena'" >Arena</button>
-      <input type="checkbox" ng-click="troop = (troop == 'zz') ? 'troop' : 'zz'" value="Troop" checked/><label>Troop</label>
-      <input type="checkbox" ng-click="spell = (spell == 'zz') ? 'spell' : 'zz'" value="Spell" checked/><label>Spell</label>
-      <input type="checkbox" ng-click="building = (building == 'zz') ? 'building' : 'zz'" value="Building" checked/><label>Building</label>
+      <input type="checkbox" ng-click="troop = (troop == 'zz') ? 'troop' : 'zz'" value="Troop" id="troop" checked/><label for="troop"><img src="../content/images/troop.svg" /></label>
+      <input type="checkbox" ng-click="spell = (spell == 'zz') ? 'spell' : 'zz'" value="Spell" id="spell" checked/><label for="spell"><img src="../content/images/spell.svg" /></label>
+      <input type="checkbox" ng-click="building = (building == 'zz') ? 'building' : 'zz'" value="Building" id="building" checked/><label for="building"><img src="../content/images/building.svg" /></label>
       <input type="range" min=0 max=9 ng-model="arena"/><label>{{arenaName[arena]}}</label>
     </div>
+  </div>
+
+  <div id="cards" ng-init="troop='troop'; spell='spell'; building='building'; arena=9">
+
 
     <ul>
       <li ng-repeat="card in cards | orderBy: myOrder | filter: myFilter" ng-show="card.arena <= arena && (card.type.includes(troop) || card.type.includes(spell) || card.type.includes(building))">

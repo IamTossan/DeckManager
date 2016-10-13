@@ -7,6 +7,7 @@
 body {
   font-family: "trebuchet ms";
   font-weight: bold;
+  color: #0f378d;
   margin: 0;
   background-color: #abd3ff;
 }
@@ -51,9 +52,9 @@ header a {
   text-decoration: none;
   text-transform: uppercase;
   padding: 5px;
-  color: #0f378d;
   border: 2px solid #fff;
   border-radius: 5px;
+  color: #0f378d;
 }
 
 header li a:hover {
@@ -68,20 +69,29 @@ header li a:hover {
   header img {
     width: 90%;
   }
+  header ul {
+    margin-bottom: 15px;
+  }
   header li {
     margin-left: 10px;
     font-size: 0.8em;
+  }
+  header hr {
+    margin: 6px auto;
   }
 }
 
 @media screen and (max-width: 660px) {
   header {
-    padding-bottom: 0;
+    padding-bottom: 5px;
   }
   header h1 {
     font-size: 1.3em;
     margin-left: 160px;
     letter-spacing: 2px;
+  }
+  header ul {
+    margin-bottom: 10px;
   }
   header li {
     margin-left: 8px;
@@ -91,11 +101,14 @@ header li a:hover {
     width: 70%;
   }
   header hr {
-    display: none;
+    margin: 5px auto;
   }
 }
 
 @media screen and (max-width: 520px) {
+  header {
+    padding-bottom: 0px;
+  }
   header > a {
     width: 65px;
   }
@@ -109,6 +122,7 @@ header li a:hover {
   }
   header ul {
     margin-right: 5px;
+    margin-bottom: 5px;
     padding-left: 10px;
   }
   header li {
@@ -117,6 +131,9 @@ header li a:hover {
   }
   header li a {
     padding: 2px;
+  }
+  header hr {
+    margin: 4px auto;
   }
 }
 
@@ -214,9 +231,10 @@ footer p {
 /********** CARDS **********/
 #cards ul {
   padding: 10px;
+  margin: 0 auto;
 }
 
-#cards li {
+#cards ul li {
   display: inline-block;
   width: 12.5%;
   text-align: center;
@@ -224,17 +242,17 @@ footer p {
   margin: 10px auto 20px;
 }
 
-#cards li div {
+#cards ul li div {
   position: relative;
   width: 90px;
   margin: 0 auto;
 }
 
-#cards img {
+#cards ul img {
   width: 100%;
 }
 
-#cards p {
+#cards ul p {
   font-family: clash;
   position: absolute;
   margin: 0;
@@ -245,11 +263,10 @@ footer p {
   text-shadow: #000 -1px 0px, #000 0px 1px, #000 1px 0px, #000 0px -1px, 0px 4px #952DAC;
 }
 
-#cards h3 {
+#cards ul h3 {
   font-family: verdana;
   margin: 0 auto;
   font-size: 0.7em;
-  color: #0f378d;
   display: block;
   width: 100%;
   height: 25px;
@@ -257,45 +274,45 @@ footer p {
 }
 
 @media screen and (max-width: 800px) {
-  #cards h3 {
+  #cards ul h3 {
     font-size: 0.6em;
   }
-  #cards li {
+  #cards ul li {
     width: 16.66667%;
   }
-  #cards p {
+  #cards ul p {
     font-size: 9px;
   }
 }
 
 @media screen and (max-width: 660px) {
-  #cards li {
+  #cards ul li {
     width: 20%;
     margin: 5px auto 15px;
   }
-  #cards h3 {
+  #cards ul h3 {
     font-size: 0.5em;
   }
-  #cards li div {
+  #cards ul li div {
     width: 80px;
   }
-  #cards p {
+  #cards ul p {
     font-size: 8px;
   }
 }
 
 @media screen and (max-width: 520px) {
-  #cards li {
+  #cards ul li {
     width: 25%;
     margin: 5px auto 10px;
   }
-  #cards h3 {
+  #cards ul h3 {
     top: 70px;
   }
-  #cards li div {
+  #cards ul li div {
     width: 60px;
   }
-  #cards p {
+  #cards ul p {
     font-size: 5px;
     top: 9px;
   }
@@ -303,5 +320,590 @@ footer p {
 
 /********** CARD FILTERS ********/
 #cardFilter {
-  padding: 10px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+#cardFilter.fixIt {
+  position: fixed;
+  top: 5px;
+  z-index: 1;
+  width: 100%;
+}
+
+#cardFilter > div {
+  background-color: #eee;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 782.5px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cardFilter > div div:nth-child(1) {
+  display: inline-block;
+  width: 150px;
+  padding: 5px;
+  position: relative;
+}
+
+#cardFilter > div div:nth-child(1) input {
+  border: 0;
+  width: 125px;
+  margin-left: 25px;
+  border-bottom: 1px solid #0f378d;
+}
+
+#cardFilter > div div:nth-child(1) input:focus {
+  outline: none;
+}
+
+#cardFilter > div div:nth-child(1) img {
+  position: absolute;
+  left: 0;
+  top: 10%;
+}
+
+#cardFilter > div div:nth-child(2) {
+  display: inline-block;
+  width: 180px;
+}
+
+#cardFilter > div div:nth-child(2) p {
+  display: inline-block;
+}
+
+#cardFilter > div div:nth-child(2) button {
+  margin-left: 4px;
+  font-family: "trebuchet ms";
+  color: #0f378d;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#cardFilter > div div:nth-child(2) button:focus {
+  outline: none;
+}
+
+#cardFilter > div div:nth-child(2) button:hover {
+  border: 1px solid #0f378d;
+}
+
+#cardFilter > div div:nth-child(3) {
+  display: inline-block;
+  width: 150px;
+}
+
+#cardFilter > div div:nth-child(4) {
+  width: 250px;
+  position: relative;
+}
+
+#cardFilter > div div:nth-child(4) input {
+  display: inline-block;
+  width: 150px;
+  margin: 0;
+}
+
+#cardFilter > div div:nth-child(4) p {
+  font-size: 0.7em;
+  position: absolute;
+  top: -5px;
+  left: 155px;
+  display: inline-block;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range] {
+  -webkit-appearance: none;
+  margin: 9px 0;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]:focus {
+  outline: none;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #0f378d;
+  border-radius: 25px;
+  border: 1px solid #000000;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #0f378d;
+  height: 26px;
+  width: 16px;
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #1449bb;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #0f378d;
+  border-radius: 25px;
+  border: 1px solid #000000;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #0f378d;
+  height: 26px;
+  width: 16px;
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-lower {
+  background: #0a255f;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-upper {
+  background: #0f378d;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #0f378d;
+  height: 26px;
+  width: 16px;
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+  height: 8px;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-lower {
+  background: #0f378d;
+}
+
+#cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-upper {
+  background: #1449bb;
+}
+
+#cardFilter > div img {
+  height: 20px;
+  width: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  #cardFilter > div {
+    width: 642.5px;
+  }
+  #cardFilter > div img {
+    height: 15px;
+    width: 15px;
+  }
+  #cardFilter > div div:nth-child(1) {
+    width: 150px;
+    padding: 5px;
+  }
+  #cardFilter > div div:nth-child(1) input {
+    width: 115px;
+    margin-left: 20px;
+  }
+  #cardFilter > div div:nth-child(2) {
+    width: 180px;
+  }
+  #cardFilter > div div:nth-child(2) p {
+    font-size: 0.7em;
+  }
+  #cardFilter > div div:nth-child(2) button {
+    margin-left: 2px;
+    border-radius: 4px;
+    font-size: 0.7em;
+  }
+  #cardFilter > div div:nth-child(4) input {
+    width: 100px;
+  }
+  #cardFilter > div div:nth-child(4) p {
+    font-size: 0.7em;
+    top: -5px;
+    left: 104px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range] {
+    -webkit-appearance: none;
+    margin: 8.4px 0;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus {
+    outline: none;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6.2px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #0f378d;
+    border-radius: 25px;
+    border: 1px solid #000000;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #0f378d;
+    height: 23px;
+    width: 12px;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -9.4px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #0f378d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 6.2px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #0f378d;
+    border-radius: 25px;
+    border: 1px solid #000000;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #0f378d;
+    height: 23px;
+    width: 12px;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-track {
+    width: 100%;
+    height: 6.2px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-lower {
+    background: #0f378d;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-upper {
+    background: #0f378d;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #0f378d;
+    height: 23px;
+    width: 12px;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    height: 6.2px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-lower {
+    background: #0f378d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-upper {
+    background: #0f378d;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter > div {
+    width: 500px;
+  }
+  #cardFilter > div img {
+    height: 10px;
+    width: 10px;
+  }
+  #cardFilter > div div:nth-child(1) {
+    width: 120px;
+    padding: 5px;
+  }
+  #cardFilter > div div:nth-child(1) input {
+    width: 100px;
+    margin-left: 10px;
+  }
+  #cardFilter > div div:nth-child(1) img {
+    top: 37.5%;
+  }
+  #cardFilter > div div:nth-child(2) {
+    width: 180px;
+  }
+  #cardFilter > div div:nth-child(2) p {
+    font-size: 0.5em;
+  }
+  #cardFilter > div div:nth-child(2) button {
+    margin-left: 2px;
+    border-radius: 4px;
+    font-size: 0.5em;
+    padding: 1px 4px;
+  }
+  #cardFilter > div div:nth-child(3) input {
+    height: 10px;
+    width: 10px;
+    margin: 2px 2px;
+  }
+  #cardFilter > div div:nth-child(4) input {
+    width: 80px;
+  }
+  #cardFilter > div div:nth-child(4) p {
+    font-size: 0.5em;
+    top: 0px;
+    left: 83px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range] {
+    -webkit-appearance: none;
+    margin: 6.5px 0;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus {
+    outline: none;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #0f378d;
+    border-radius: 25px;
+    border: 1px solid #000000;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #0f378d;
+    height: 17px;
+    width: 9px;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7.5px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #0f378d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #0f378d;
+    border-radius: 25px;
+    border: 1px solid #000000;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #0f378d;
+    height: 17px;
+    width: 9px;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-lower {
+    background: #0f378d;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-upper {
+    background: #0f378d;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #0f378d;
+    height: 17px;
+    width: 9px;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    height: 4px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-lower {
+    background: #0f378d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-upper {
+    background: #0f378d;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #cardFilter > div {
+    width: 300px;
+    padding: 4px;
+  }
+  #cardFilter > div img {
+    height: 7.5px;
+    width: 7.5px;
+  }
+  #cardFilter > div div:nth-child(1) {
+    width: 60px;
+    padding: 3px;
+  }
+  #cardFilter > div div:nth-child(1) input {
+    width: 45px;
+    margin-left: 7px;
+    font-size: 0.4em;
+    position: absolute;
+    top: -50%;
+  }
+  #cardFilter > div div:nth-child(1) img {
+    top: -30%;
+  }
+  #cardFilter > div div:nth-child(2) {
+    width: 160px;
+    margin-left: 25px;
+  }
+  #cardFilter > div div:nth-child(2) p {
+    font-size: 0.2em;
+  }
+  #cardFilter > div div:nth-child(2) button {
+    margin-left: 1px;
+    border-radius: 3px;
+    font-size: 0.3em;
+    padding: 1px 3px;
+  }
+  #cardFilter > div div:nth-child(3) input {
+    height: 7.5px;
+    width: 7.5px;
+    margin: 2px 2px;
+  }
+  #cardFilter > div div:nth-child(4) {
+    width: 120px;
+  }
+  #cardFilter > div div:nth-child(4) input {
+    width: 50px;
+  }
+  #cardFilter > div div:nth-child(4) p {
+    font-size: 0.3em;
+    top: -6px;
+    left: 5px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range] {
+    -webkit-appearance: none;
+    margin: 4px 0;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus {
+    outline: none;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #0f378d;
+    border-radius: 25px;
+    border: 0px solid #000000;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 0px solid #0f378d;
+    height: 10px;
+    width: 4px;
+    border-radius: 1px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #0f378d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #0f378d;
+    border-radius: 25px;
+    border: 0px solid #000000;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 0px solid #0f378d;
+    height: 10px;
+    width: 4px;
+    border-radius: 1px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-lower {
+    background: #0f378d;
+    border: 0px solid #000000;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-upper {
+    background: #0f378d;
+    border: 0px solid #000000;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 0px solid #0f378d;
+    height: 10px;
+    width: 4px;
+    border-radius: 1px;
+    background: #ffffff;
+    cursor: pointer;
+    height: 2px;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-lower {
+    background: #0f378d;
+  }
+  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-upper {
+    background: #0f378d;
+  }
 }

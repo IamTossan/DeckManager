@@ -1,13 +1,25 @@
 <div id="cards" ng-init="troop='troop'; spell='spell'; building='building'; arena=9">
-  <div id="cardFilter">
-    <input type="text" ng-model="myFilter" />
-    <button ng-click="myOrder = 'elixir'" >Elixir</button>
-    <button ng-click="myOrder = 'name'" >Name</button>
-    <button ng-click="myOrder = 'arena'" >Arena</button>
-    <input type="checkbox" ng-click="troop = (troop == 'zz') ? 'troop' : 'zz'" value="Troop" checked/><label>Troop</label>
-    <input type="checkbox" ng-click="spell = (spell == 'zz') ? 'spell' : 'zz'" value="Spell" checked/><label>Spell</label>
-    <input type="checkbox" ng-click="building = (building == 'zz') ? 'building' : 'zz'" value="Building" checked/><label>Building</label>
-    <input type="range" min=0 max=9 ng-model="arena"/><label>{{arenaName[arena]}}</label>
+  <div id="cardFilter" >
+    <div>
+      <div>
+        <label for="search"><img src="../content/images/search.svg" /></label>
+        <input type="text" placeholder="search" ng-model="myFilter" />
+      </div>
+      <div>
+        <p>Sort by : </p>
+        <button ng-click="myOrder = 'elixir'" >Elixir</button>
+        <button ng-click="myOrder = 'name'" >Name</button>
+      </div>
+      <div>
+        <input type="checkbox" ng-click="troop = (troop == 'zz') ? 'troop' : 'zz'" value="Troop" id="troop" checked/><label for="troop"><img src="../content/images/troop.svg" /></label>
+        <input type="checkbox" ng-click="spell = (spell == 'zz') ? 'spell' : 'zz'" value="Spell" id="spell" checked/><label for="spell"><img src="../content/images/spell.svg" /></label>
+        <input type="checkbox" ng-click="building = (building == 'zz') ? 'building' : 'zz'" value="Building" id="building" checked/><label for="building"><img src="../content/images/building.svg" /></label>
+      </div>
+      <div>
+        <input type="range" min=0 max=9 ng-model="arena"/>
+        <p>{{arenaName[arena]}}</p>
+      </div>
+    </div>
   </div>
 
   <ul>
