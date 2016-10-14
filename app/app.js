@@ -89,7 +89,7 @@ myCRDeckApp.controller('DeckController', ['$scope', '$http', '$location', 'deckS
   $scope.typeFilter = ["troop", "spell", "building"];
 
   $scope.showCard = function(card) {
-    if (card.arena <= $scope.arena && $scope.typeFilter.includes(card.type)) {
+    if (card.arena <= $scope.arena && $scope.typeFilter.indexOf(card.type) > -1) {
       return true;
     } else {
       return false;
@@ -135,7 +135,7 @@ myCRDeckApp.controller('DeckController', ['$scope', '$http', '$location', 'deckS
   };
 
   $scope.addCard = function(card) {
-    if ($scope.newDeck.deck.length < 8 && !$scope.newDeck.deck.includes(card)) {
+    if ($scope.newDeck.deck.length < 8 && !($scope.newDeck.deck.indexOf(card) > -1)) {
       $scope.newDeck.deck.push(card);
     }
   };

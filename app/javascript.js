@@ -11,7 +11,10 @@ document.addEventListener("scroll", function(e){
 
     var FIREFOX = /Firefox/i.test(navigator.userAgent);
 
-    if (FIREFOX) {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./);
+
+    if (FIREFOX || msie) {
       if (document.documentElement.scrollTop > height && !cardFilter.classList.contains("fixIt")) {
         cardFilter.setAttribute("class", "fixIt");
       } else if ((document.documentElement.scrollTop <= height && cardFilter.classList.contains("fixIt"))) {
