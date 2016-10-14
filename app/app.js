@@ -96,6 +96,16 @@ myCRDeckApp.controller('DeckController', ['$scope', '$http', '$location', 'deckS
     return thumb;
   };
 
+  $scope.findElixir = function(cardInput){
+    var elixir = "";
+    angular.forEach($scope.cards, function(card){
+      if (card.name == cardInput) {
+        elixir = card.elixir;
+      }
+    });
+    return elixir;
+  };
+
   $scope.addDeck = function(){
 
     $scope.decks.unshift({

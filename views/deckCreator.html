@@ -37,6 +37,7 @@
         <ul>
           <li ng-repeat="card in newDeck.deck" ng-click="removeCard(card)">
             <img ng-src="{{findThumb(card)}}" />
+            <p>{{findElixir(card)}}</p>
           </li>
         </ul>
       </div>

@@ -7,9 +7,12 @@
         <img src="../content/images/edit.svg"  ng-click="updateDeck(deck)" />
       </h3>
       <ul>
-        <li ng-repeat="card in deck.deck"><img ng-src="{{findThumb(card)}}" /></li>
+        <li ng-repeat="card in deck.deck">
+          <img ng-src="{{findThumb(card)}}" />
+          <p>{{findElixir(card)}}</p>
+        </li>
       </ul>
-      
+
     </li>
   </ul>
 
