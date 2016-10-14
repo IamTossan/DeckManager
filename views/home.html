@@ -1,11 +1,13 @@
 <div id="home">
-  <!--<img src="content\images\background.jpg" />-->
+
   <picture>
-    <source srcset="content\images\background-small.jpg" media="(max-width: 500px)" />
-    <source srcset="content\images\background-medium.jpg" media="(max-width: 1000px)" />
-    <img srcset="content\images\background.JPG" alt="clash royale background image" />
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source srcset="content\images\background-small.jpg" media="(max-width: 520px)">
+    <source srcset="content\images\background-medium.jpg" media="(max-width: 1000px)">
+    <!--[if IE 9]></video><![endif]-->
+    <img src="content\images\background.jpg" alt="clash royale background image">
   </picture>
-  <img src="content\images\logo.png" />
+  <img src="content\images\logo.png">
   <h1>Welcome to Clash Royale Deck Manager</h1>
   <p>This site is an AngularJS 1 demonstration !</p>
 </div>

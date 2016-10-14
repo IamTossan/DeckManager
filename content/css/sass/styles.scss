@@ -21,9 +21,11 @@ body {
 
 #wrapper {
   width: 100%;
+
   margin: 0 auto;
   background-color: #fff;
 }
+
 
 
 /*******  HEADER *********/
@@ -179,6 +181,7 @@ footer {
     &:nth-child(2) {
       position: absolute;
       top: 10px;
+      left: 0;
     }
   }
   h1 {
@@ -226,6 +229,10 @@ footer {
 }
 
 /********** CARDS **********/
+
+#cards {
+  width: 100%;
+}
 
 #cards ul{
   padding: 10px;
@@ -317,8 +324,6 @@ footer {
 /********** CARD FILTERS ********/
 
 #cardFilter {
-
-
   margin: 10px auto 0;
   &.fixIt {
     margin: 0 auto;
@@ -328,20 +333,34 @@ footer {
     z-index: 1;
     width: 100%;
   }
+  &> div {
+    background-color: #eee;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: $large - 17.5;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mQ($large) {
+      width: $medium - 17.5;
+    }
+    @include mQ($medium) {
+      width: $small - 17.5;
+    }
+    @include mQ($small) {
+      width: 300px;
+      padding: 4px;
+    }
+  }
 }
 
 
-#cardFilter > div{
-  background-color: #eee;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: $large - 17.5;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+#cardFilter div{
+
 
   div:nth-child(1){
     display: inline-block;
@@ -353,6 +372,10 @@ footer {
       width: 125px;
       margin-left: 25px;
       border-bottom: 1px solid $blue;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 0;
       &:focus {
         outline: none;
       }
@@ -368,9 +391,10 @@ footer {
     width: 180px;
     p {
       display: inline-block;
+      font-size: 0.85em;
     }
     button {
-      margin-left: 4px;
+      margin-left: 3px;
       font-family: "trebuchet ms";
       color: $blue;
       border-radius: 4px;
@@ -388,7 +412,7 @@ footer {
     width: 150px;
   }
   div:nth-child(4){
-    width: 250px;
+    width: 245px;
     position: relative;
     input {
       display: inline-block;
@@ -398,10 +422,13 @@ footer {
     p {
       font-size: 0.7em;
       position: absolute;
-      top: -5px;
+      top: -3px;
       left: 155px;
       display: inline-block;
     }
+
+  }
+  div {
     @import 'slide';
   }
   img {
@@ -410,7 +437,7 @@ footer {
   }
 
   @include mQ($large) {
-    width: $medium - 17.5;
+
     img {
       height: 15px;
       width: 15px;
@@ -426,12 +453,12 @@ footer {
     div:nth-child(2){
       width: 180px;
       p {
-        font-size: 0.7em;
+        font-size: 0.6em;
       }
       button {
         margin-left: 2px;
         border-radius: 4px;
-        font-size: 0.7em;
+        font-size: 0.6em;
       }
     }
     div:nth-child(4){
@@ -440,15 +467,17 @@ footer {
       }
       p {
         font-size: 0.7em;
-        top: -5px;
+        top: -2px;
         left: 104px;
       }
+
+    }
+    div {
       @import "slideLarge";
     }
-
   }
   @include mQ($medium) {
-    width: $small - 20;
+
     img {
       height: 10px;
       width: 10px;
@@ -474,7 +503,7 @@ footer {
         margin-left: 2px;
         border-radius: 4px;
         font-size: 0.5em;
-        padding: 1px 4px;
+        padding: 1px 3px;
       }
     }
     div:nth-child(3){
@@ -493,12 +522,14 @@ footer {
         top: 0px;
         left: 83px;
       }
+
+    }
+    div {
       @import "slideMedium";
     }
   }
   @include mQ($small) {
-    width: 300px;
-    padding: 4px;
+
     img {
       height: 7.5px;
       width: 7.5px;
@@ -547,6 +578,9 @@ footer {
         top: -6px;
         left: 5px;
       }
+
+    }
+    div {
       @import "slideSmall";
     }
   }
@@ -663,6 +697,10 @@ footer {
       height: 15px;
       width: 200px;
       margin: 10px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 3px;
       &.ng-touched.ng-invalid{
         border-bottom-color: red;
       }
@@ -679,6 +717,11 @@ footer {
       border-radius: 4px;
       border: 1px solid green;
       float: right;
+      font-family: "trebuchet ms";
+      font-weight: bold;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       &:hover{
         border-color: $blue;
       }

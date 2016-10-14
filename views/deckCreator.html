@@ -1,11 +1,11 @@
 <div id="deck-creator">
-  <div id="cardFilter">
+  <div id="cardFilter" ng-init="arena=9">
 
 
     <div>
       <div>
-        <label for="search"><img src="../content/images/search.svg" /></label>
-        <input type="text" placeholder="search" ng-model="myFilter" />
+        <label for="search"><img src="../content/images/search.svg"></label>
+        <input type="text" placeholder="search" ng-model="myFilter">
       </div>
       <div>
         <p>Sort by : </p>
@@ -13,9 +13,9 @@
         <button ng-click="myOrder = 'name'" >Name</button>
       </div>
       <div>
-        <input type="checkbox" ng-click="troop = (troop == 'zz') ? 'troop' : 'zz'" value="Troop" id="troop" checked/><label for="troop"><img src="../content/images/troop.svg" /></label>
-        <input type="checkbox" ng-click="spell = (spell == 'zz') ? 'spell' : 'zz'" value="Spell" id="spell" checked/><label for="spell"><img src="../content/images/spell.svg" /></label>
-        <input type="checkbox" ng-click="building = (building == 'zz') ? 'building' : 'zz'" value="Building" id="building" checked/><label for="building"><img src="../content/images/building.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[0] = (typeFilter[0] == 'troop') ? 'zz' : 'troop'" value="Troop" id="troop" checked/><label for="troop"><img src="../content/images/troop.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[1] = (typeFilter[1] == 'spell') ? 'zz' : 'spell'" value="Spell" id="spell" checked/><label for="spell"><img src="../content/images/spell.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[2] = (typeFilter[2] == 'building') ? 'zz' : 'building'" value="Building" id="building" checked/><label for="building"><img src="../content/images/building.svg" /></label>
       </div>
       <div>
         <input type="range" min=0 max=9 ng-model="arena"/>
@@ -26,17 +26,17 @@
     <div>
       <div id="creator">
         <form ng-submit="addDeck()" name="createDeckForm" novalidate>
-          <input type="text" ng-model="newDeck.name" name="deckName" maxlength="25" placeholder="Deck name" ng-required="true" />
+          <input type="text" ng-model="newDeck.name" name="deckName" maxlength="25" placeholder="Deck name" ng-required="true">
 
           <p ng-show="newDeck.deck.length == 8 && createDeckForm.deckName.$invalid">&#8678;   Enter a deck name</p>
           <p ng-show="newDeck.deck.length == 0">Click on any card</p>
           <p ng-show="newDeck.deck.length < 8 && newDeck.deck.length > 0">You need {{8 - newDeck.deck.length}} more card<span ng-show="newDeck.deck.length < 7">s</span></p>
-          <input type="submit" value="Save" ng-disabled="createDeckForm.$invalid || newDeck.deck.length != 8 "/>
+          <input type="submit" value="Save" ng-disabled="createDeckForm.$invalid || newDeck.deck.length != 8 ">
 
         </form>
         <ul>
           <li ng-repeat="card in newDeck.deck" ng-click="removeCard(card)">
-            <img ng-src="{{findThumb(card)}}" />
+            <img ng-src="{{findThumb(card)}}">
             <p>{{findElixir(card)}}</p>
           </li>
         </ul>
@@ -46,13 +46,13 @@
 
   </div>
 
-  <div id="cards" ng-init="troop='troop'; spell='spell'; building='building'; arena=9">
+  <div id="cards" >
 
 
     <ul>
-      <li ng-repeat="card in cards | orderBy: myOrder | filter: myFilter" ng-show="card.arena <= arena && (card.type.includes(troop) || card.type.includes(spell) || card.type.includes(building))">
+      <li ng-repeat="card in cards | orderBy: myOrder | filter: myFilter" ng-show="showCard(card)">
         <div>
-          <img ng-src="{{card.thumb}}" ng-click="addCard(card.name)" />
+          <img ng-src="{{card.thumb}}" ng-click="addCard(card.name)">
           <p>{{card.elixir}}</p>
         </div>
         <h3>{{card.name}}</h3>

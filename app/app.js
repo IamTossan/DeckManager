@@ -86,6 +86,16 @@ myCRDeckApp.controller('DeckController', ['$scope', '$http', '$location', 'deckS
     "Legendary Arena"
   ];
 
+  $scope.typeFilter = ["troop", "spell", "building"];
+
+  $scope.showCard = function(card) {
+    if (card.arena <= $scope.arena && $scope.typeFilter.includes(card.type)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   $scope.findThumb = function(cardInput){
     var thumb = "";
     angular.forEach($scope.cards, function(card){
@@ -123,8 +133,6 @@ myCRDeckApp.controller('DeckController', ['$scope', '$http', '$location', 'deckS
     $scope.decks.splice(removedDeck, 1);
 
   };
-
-
 
   $scope.addCard = function(card) {
     if ($scope.newDeck.deck.length < 8 && !$scope.newDeck.deck.includes(card)) {

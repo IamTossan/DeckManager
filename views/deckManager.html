@@ -3,12 +3,12 @@
   <ul>
     <li ng-repeat="deck in decks" class="deck">
       <h3>{{deck.name}}
-        <img src="../content/images/delete.svg" ng-click="removeDeck(deck)" />
-        <img src="../content/images/edit.svg"  ng-click="updateDeck(deck)" />
+        <img src="../content/images/delete.svg" ng-click="removeDeck(deck)">
+        <img src="../content/images/edit.svg"  ng-click="updateDeck(deck)">
       </h3>
       <ul>
         <li ng-repeat="card in deck.deck">
-          <img ng-src="{{findThumb(card)}}" />
+          <img ng-src="{{findThumb(card)}}">
           <p>{{findElixir(card)}}</p>
         </li>
       </ul>

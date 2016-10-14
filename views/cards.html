@@ -1,4 +1,4 @@
-<div id="cards" ng-init="troop='troop'; spell='spell'; building='building'; arena=9">
+<div id="cards" ng-init="arena=9">
   <div id="cardFilter" >
     <div>
       <div>
@@ -11,24 +11,28 @@
         <button ng-click="myOrder = 'name'" >Name</button>
       </div>
       <div>
-        <input type="checkbox" ng-click="troop = (troop == 'zz') ? 'troop' : 'zz'" value="Troop" id="troop" checked/><label for="troop"><img src="../content/images/troop.svg" /></label>
-        <input type="checkbox" ng-click="spell = (spell == 'zz') ? 'spell' : 'zz'" value="Spell" id="spell" checked/><label for="spell"><img src="../content/images/spell.svg" /></label>
-        <input type="checkbox" ng-click="building = (building == 'zz') ? 'building' : 'zz'" value="Building" id="building" checked/><label for="building"><img src="../content/images/building.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[0] = (typeFilter[0] == 'troop') ? 'zz' : 'troop'" value="Troop" id="troop" checked/><label for="troop"><img src="../content/images/troop.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[1] = (typeFilter[1] == 'spell') ? 'zz' : 'spell'" value="Spell" id="spell" checked/><label for="spell"><img src="../content/images/spell.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[2] = (typeFilter[2] == 'building') ? 'zz' : 'building'" value="Building" id="building" checked/><label for="building"><img src="../content/images/building.svg" /></label>
       </div>
       <div>
         <input type="range" min=0 max=9 ng-model="arena"/>
         <p>{{arenaName[arena]}}</p>
       </div>
     </div>
+
   </div>
 
   <ul>
-    <li ng-repeat="card in cards | orderBy: myOrder | filter: myFilter" ng-show="card.arena <= arena && (card.type.includes(troop) || card.type.includes(spell) || card.type.includes(building))">
+
+    <li ng-repeat="card in cards | orderBy: myOrder | filter: myFilter" ng-show="showCard(card)">
       <div>
         <img ng-src="{{card.thumb}}" />
         <p>{{card.elixir}}</p>
       </div>
       <h3>{{card.name}}</h3>
+
+
 
     </li>
   </ul>

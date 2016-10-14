@@ -183,6 +183,7 @@ footer p {
 #home img:nth-child(2) {
   position: absolute;
   top: 10px;
+  left: 0;
 }
 
 #home h1 {
@@ -230,6 +231,10 @@ footer p {
 }
 
 /********** CARDS **********/
+#cards {
+  width: 100%;
+}
+
 #cards ul {
   padding: 10px;
   margin: 0 auto;
@@ -348,89 +353,113 @@ footer p {
   align-items: center;
 }
 
-#cardFilter > div div:nth-child(1) {
+@media screen and (max-width: 800px) {
+  #cardFilter > div {
+    width: 642.5px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter > div {
+    width: 502.5px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #cardFilter > div {
+    width: 300px;
+    padding: 4px;
+  }
+}
+
+#cardFilter div div:nth-child(1) {
   display: inline-block;
   width: 150px;
   padding: 5px;
   position: relative;
 }
 
-#cardFilter > div div:nth-child(1) input {
+#cardFilter div div:nth-child(1) input {
   border: 0;
   width: 125px;
   margin-left: 25px;
   border-bottom: 1px solid #0f378d;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
-#cardFilter > div div:nth-child(1) input:focus {
+#cardFilter div div:nth-child(1) input:focus {
   outline: none;
 }
 
-#cardFilter > div div:nth-child(1) img {
+#cardFilter div div:nth-child(1) img {
   position: absolute;
   left: 0;
   top: 10%;
 }
 
-#cardFilter > div div:nth-child(2) {
+#cardFilter div div:nth-child(2) {
   display: inline-block;
   width: 180px;
 }
 
-#cardFilter > div div:nth-child(2) p {
+#cardFilter div div:nth-child(2) p {
   display: inline-block;
+  font-size: 0.85em;
 }
 
-#cardFilter > div div:nth-child(2) button {
-  margin-left: 4px;
+#cardFilter div div:nth-child(2) button {
+  margin-left: 3px;
   font-family: "trebuchet ms";
   color: #0f378d;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
 
-#cardFilter > div div:nth-child(2) button:focus {
+#cardFilter div div:nth-child(2) button:focus {
   outline: none;
 }
 
-#cardFilter > div div:nth-child(2) button:hover {
+#cardFilter div div:nth-child(2) button:hover {
   border: 1px solid #0f378d;
 }
 
-#cardFilter > div div:nth-child(3) {
+#cardFilter div div:nth-child(3) {
   display: inline-block;
   width: 150px;
 }
 
-#cardFilter > div div:nth-child(4) {
-  width: 250px;
+#cardFilter div div:nth-child(4) {
+  width: 245px;
   position: relative;
 }
 
-#cardFilter > div div:nth-child(4) input {
+#cardFilter div div:nth-child(4) input {
   display: inline-block;
   width: 150px;
   margin: 0;
 }
 
-#cardFilter > div div:nth-child(4) p {
+#cardFilter div div:nth-child(4) p {
   font-size: 0.7em;
   position: absolute;
-  top: -5px;
+  top: -3px;
   left: 155px;
   display: inline-block;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range] {
+#cardFilter div div input[type=range] {
   -webkit-appearance: none;
   margin: 9px 0;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]:focus {
+#cardFilter div div input[type=range]:focus {
   outline: none;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-runnable-track {
+#cardFilter div div input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 8px;
   cursor: pointer;
@@ -440,7 +469,7 @@ footer p {
   border: 1px solid #000000;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-thumb {
+#cardFilter div div input[type=range]::-webkit-slider-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #0f378d;
   height: 26px;
@@ -452,11 +481,11 @@ footer p {
   margin-top: -10px;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]:focus::-webkit-slider-runnable-track {
+#cardFilter div div input[type=range]:focus::-webkit-slider-runnable-track {
   background: #1449bb;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]::-moz-range-track {
+#cardFilter div div input[type=range]::-moz-range-track {
   width: 100%;
   height: 8px;
   cursor: pointer;
@@ -466,7 +495,7 @@ footer p {
   border: 1px solid #000000;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]::-moz-range-thumb {
+#cardFilter div div input[type=range]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #0f378d;
   height: 26px;
@@ -476,7 +505,7 @@ footer p {
   cursor: pointer;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]::-ms-track {
+#cardFilter div div input[type=range]::-ms-track {
   width: 100%;
   height: 8px;
   cursor: pointer;
@@ -485,21 +514,21 @@ footer p {
   color: transparent;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-lower {
+#cardFilter div div input[type=range]::-ms-fill-lower {
   background: #0a255f;
   border: 1px solid #000000;
   border-radius: 50px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-upper {
+#cardFilter div div input[type=range]::-ms-fill-upper {
   background: #0f378d;
   border: 1px solid #000000;
   border-radius: 50px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]::-ms-thumb {
+#cardFilter div div input[type=range]::-ms-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #0f378d;
   height: 26px;
@@ -510,62 +539,59 @@ footer p {
   height: 8px;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-lower {
+#cardFilter div div input[type=range]:focus::-ms-fill-lower {
   background: #0f378d;
 }
 
-#cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-upper {
+#cardFilter div div input[type=range]:focus::-ms-fill-upper {
   background: #1449bb;
 }
 
-#cardFilter > div img {
+#cardFilter div img {
   height: 20px;
   width: 20px;
 }
 
 @media screen and (max-width: 800px) {
-  #cardFilter > div {
-    width: 642.5px;
-  }
-  #cardFilter > div img {
+  #cardFilter div img {
     height: 15px;
     width: 15px;
   }
-  #cardFilter > div div:nth-child(1) {
+  #cardFilter div div:nth-child(1) {
     width: 150px;
     padding: 5px;
   }
-  #cardFilter > div div:nth-child(1) input {
+  #cardFilter div div:nth-child(1) input {
     width: 115px;
     margin-left: 20px;
   }
-  #cardFilter > div div:nth-child(2) {
+  #cardFilter div div:nth-child(2) {
     width: 180px;
   }
-  #cardFilter > div div:nth-child(2) p {
-    font-size: 0.7em;
+  #cardFilter div div:nth-child(2) p {
+    font-size: 0.6em;
   }
-  #cardFilter > div div:nth-child(2) button {
+  #cardFilter div div:nth-child(2) button {
     margin-left: 2px;
     border-radius: 4px;
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
-  #cardFilter > div div:nth-child(4) input {
+  #cardFilter div div:nth-child(4) input {
     width: 100px;
   }
-  #cardFilter > div div:nth-child(4) p {
+  #cardFilter div div:nth-child(4) p {
     font-size: 0.7em;
-    top: -5px;
+    top: -2px;
     left: 104px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range] {
+  #cardFilter div div input[type=range] {
     -webkit-appearance: none;
     margin: 8.4px 0;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus {
+  #cardFilter div div input[type=range]:focus {
     outline: none;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-runnable-track {
+  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 6.2px;
     cursor: pointer;
@@ -574,7 +600,7 @@ footer p {
     border-radius: 25px;
     border: 1px solid #000000;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-thumb {
+  #cardFilter div div input[type=range]::-webkit-slider-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 1px solid #0f378d;
     height: 23px;
@@ -585,10 +611,10 @@ footer p {
     -webkit-appearance: none;
     margin-top: -9.4px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-webkit-slider-runnable-track {
+  #cardFilter div div input[type=range]:focus::-webkit-slider-runnable-track {
     background: #0f378d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-track {
+  #cardFilter div div input[type=range]::-moz-range-track {
     width: 100%;
     height: 6.2px;
     cursor: pointer;
@@ -597,7 +623,7 @@ footer p {
     border-radius: 25px;
     border: 1px solid #000000;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-thumb {
+  #cardFilter div div input[type=range]::-moz-range-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 1px solid #0f378d;
     height: 23px;
@@ -606,7 +632,7 @@ footer p {
     background: #ffffff;
     cursor: pointer;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-track {
+  #cardFilter div div input[type=range]::-ms-track {
     width: 100%;
     height: 6.2px;
     cursor: pointer;
@@ -614,19 +640,19 @@ footer p {
     border-color: transparent;
     color: transparent;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-lower {
+  #cardFilter div div input[type=range]::-ms-fill-lower {
     background: #0f378d;
     border: 1px solid #000000;
     border-radius: 50px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-upper {
+  #cardFilter div div input[type=range]::-ms-fill-upper {
     background: #0f378d;
     border: 1px solid #000000;
     border-radius: 50px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-thumb {
+  #cardFilter div div input[type=range]::-ms-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 1px solid #0f378d;
     height: 23px;
@@ -636,66 +662,63 @@ footer p {
     cursor: pointer;
     height: 6.2px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-lower {
+  #cardFilter div div input[type=range]:focus::-ms-fill-lower {
     background: #0f378d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-upper {
+  #cardFilter div div input[type=range]:focus::-ms-fill-upper {
     background: #0f378d;
   }
 }
 
 @media screen and (max-width: 660px) {
-  #cardFilter > div {
-    width: 500px;
-  }
-  #cardFilter > div img {
+  #cardFilter div img {
     height: 10px;
     width: 10px;
   }
-  #cardFilter > div div:nth-child(1) {
+  #cardFilter div div:nth-child(1) {
     width: 120px;
     padding: 5px;
   }
-  #cardFilter > div div:nth-child(1) input {
+  #cardFilter div div:nth-child(1) input {
     width: 100px;
     margin-left: 10px;
   }
-  #cardFilter > div div:nth-child(1) img {
+  #cardFilter div div:nth-child(1) img {
     top: 37.5%;
   }
-  #cardFilter > div div:nth-child(2) {
+  #cardFilter div div:nth-child(2) {
     width: 180px;
   }
-  #cardFilter > div div:nth-child(2) p {
+  #cardFilter div div:nth-child(2) p {
     font-size: 0.5em;
   }
-  #cardFilter > div div:nth-child(2) button {
+  #cardFilter div div:nth-child(2) button {
     margin-left: 2px;
     border-radius: 4px;
     font-size: 0.5em;
-    padding: 1px 4px;
+    padding: 1px 3px;
   }
-  #cardFilter > div div:nth-child(3) input {
+  #cardFilter div div:nth-child(3) input {
     height: 10px;
     width: 10px;
     margin: 2px 2px;
   }
-  #cardFilter > div div:nth-child(4) input {
+  #cardFilter div div:nth-child(4) input {
     width: 80px;
   }
-  #cardFilter > div div:nth-child(4) p {
+  #cardFilter div div:nth-child(4) p {
     font-size: 0.5em;
     top: 0px;
     left: 83px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range] {
+  #cardFilter div div input[type=range] {
     -webkit-appearance: none;
     margin: 6.5px 0;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus {
+  #cardFilter div div input[type=range]:focus {
     outline: none;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-runnable-track {
+  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 4px;
     cursor: pointer;
@@ -704,7 +727,7 @@ footer p {
     border-radius: 25px;
     border: 1px solid #000000;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-thumb {
+  #cardFilter div div input[type=range]::-webkit-slider-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 1px solid #0f378d;
     height: 17px;
@@ -715,10 +738,10 @@ footer p {
     -webkit-appearance: none;
     margin-top: -7.5px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-webkit-slider-runnable-track {
+  #cardFilter div div input[type=range]:focus::-webkit-slider-runnable-track {
     background: #0f378d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-track {
+  #cardFilter div div input[type=range]::-moz-range-track {
     width: 100%;
     height: 4px;
     cursor: pointer;
@@ -727,7 +750,7 @@ footer p {
     border-radius: 25px;
     border: 1px solid #000000;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-thumb {
+  #cardFilter div div input[type=range]::-moz-range-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 1px solid #0f378d;
     height: 17px;
@@ -736,7 +759,7 @@ footer p {
     background: #ffffff;
     cursor: pointer;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-track {
+  #cardFilter div div input[type=range]::-ms-track {
     width: 100%;
     height: 4px;
     cursor: pointer;
@@ -744,19 +767,19 @@ footer p {
     border-color: transparent;
     color: transparent;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-lower {
+  #cardFilter div div input[type=range]::-ms-fill-lower {
     background: #0f378d;
     border: 1px solid #000000;
     border-radius: 50px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-upper {
+  #cardFilter div div input[type=range]::-ms-fill-upper {
     background: #0f378d;
     border: 1px solid #000000;
     border-radius: 50px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-thumb {
+  #cardFilter div div input[type=range]::-ms-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 1px solid #0f378d;
     height: 17px;
@@ -766,74 +789,70 @@ footer p {
     cursor: pointer;
     height: 4px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-lower {
+  #cardFilter div div input[type=range]:focus::-ms-fill-lower {
     background: #0f378d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-upper {
+  #cardFilter div div input[type=range]:focus::-ms-fill-upper {
     background: #0f378d;
   }
 }
 
 @media screen and (max-width: 520px) {
-  #cardFilter > div {
-    width: 300px;
-    padding: 4px;
-  }
-  #cardFilter > div img {
+  #cardFilter div img {
     height: 7.5px;
     width: 7.5px;
   }
-  #cardFilter > div div:nth-child(1) {
+  #cardFilter div div:nth-child(1) {
     width: 60px;
     padding: 3px;
   }
-  #cardFilter > div div:nth-child(1) input {
+  #cardFilter div div:nth-child(1) input {
     width: 45px;
     margin-left: 7px;
     font-size: 0.4em;
     position: absolute;
     top: -50%;
   }
-  #cardFilter > div div:nth-child(1) img {
+  #cardFilter div div:nth-child(1) img {
     top: -30%;
   }
-  #cardFilter > div div:nth-child(2) {
+  #cardFilter div div:nth-child(2) {
     width: 160px;
     margin-left: 25px;
   }
-  #cardFilter > div div:nth-child(2) p {
+  #cardFilter div div:nth-child(2) p {
     font-size: 0.2em;
   }
-  #cardFilter > div div:nth-child(2) button {
+  #cardFilter div div:nth-child(2) button {
     margin-left: 1px;
     border-radius: 3px;
     font-size: 0.3em;
     padding: 1px 3px;
   }
-  #cardFilter > div div:nth-child(3) input {
+  #cardFilter div div:nth-child(3) input {
     height: 7.5px;
     width: 7.5px;
     margin: 2px 2px;
   }
-  #cardFilter > div div:nth-child(4) {
+  #cardFilter div div:nth-child(4) {
     width: 120px;
   }
-  #cardFilter > div div:nth-child(4) input {
+  #cardFilter div div:nth-child(4) input {
     width: 50px;
   }
-  #cardFilter > div div:nth-child(4) p {
+  #cardFilter div div:nth-child(4) p {
     font-size: 0.3em;
     top: -6px;
     left: 5px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range] {
+  #cardFilter div div input[type=range] {
     -webkit-appearance: none;
     margin: 4px 0;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus {
+  #cardFilter div div input[type=range]:focus {
     outline: none;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-runnable-track {
+  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 2px;
     cursor: pointer;
@@ -842,7 +861,7 @@ footer p {
     border-radius: 25px;
     border: 0px solid #000000;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-webkit-slider-thumb {
+  #cardFilter div div input[type=range]::-webkit-slider-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 0px solid #0f378d;
     height: 10px;
@@ -853,10 +872,10 @@ footer p {
     -webkit-appearance: none;
     margin-top: -4px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-webkit-slider-runnable-track {
+  #cardFilter div div input[type=range]:focus::-webkit-slider-runnable-track {
     background: #0f378d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-track {
+  #cardFilter div div input[type=range]::-moz-range-track {
     width: 100%;
     height: 2px;
     cursor: pointer;
@@ -865,7 +884,7 @@ footer p {
     border-radius: 25px;
     border: 0px solid #000000;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-moz-range-thumb {
+  #cardFilter div div input[type=range]::-moz-range-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 0px solid #0f378d;
     height: 10px;
@@ -874,7 +893,7 @@ footer p {
     background: #ffffff;
     cursor: pointer;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-track {
+  #cardFilter div div input[type=range]::-ms-track {
     width: 100%;
     height: 2px;
     cursor: pointer;
@@ -882,19 +901,19 @@ footer p {
     border-color: transparent;
     color: transparent;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-lower {
+  #cardFilter div div input[type=range]::-ms-fill-lower {
     background: #0f378d;
     border: 0px solid #000000;
     border-radius: 50px;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-fill-upper {
+  #cardFilter div div input[type=range]::-ms-fill-upper {
     background: #0f378d;
     border: 0px solid #000000;
     border-radius: 50px;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]::-ms-thumb {
+  #cardFilter div div input[type=range]::-ms-thumb {
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     border: 0px solid #0f378d;
     height: 10px;
@@ -904,10 +923,10 @@ footer p {
     cursor: pointer;
     height: 2px;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-lower {
+  #cardFilter div div input[type=range]:focus::-ms-fill-lower {
     background: #0f378d;
   }
-  #cardFilter > div div:nth-child(4) input[type=range]:focus::-ms-fill-upper {
+  #cardFilter div div input[type=range]:focus::-ms-fill-upper {
     background: #0f378d;
   }
 }
@@ -1040,6 +1059,10 @@ footer p {
   height: 15px;
   width: 200px;
   margin: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 3px;
 }
 
 #cardFilter #creator form input:first-of-type.ng-touched.ng-invalid {
@@ -1059,6 +1082,11 @@ footer p {
   border-radius: 4px;
   border: 1px solid green;
   float: right;
+  font-family: "trebuchet ms";
+  font-weight: bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 #cardFilter #creator form input:last-of-type:hover {
