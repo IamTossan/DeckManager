@@ -791,7 +791,7 @@ footer {
   padding: 20px;
   &> ul {
     list-style-type: none;
-
+    padding: 0;
   }
   ul li.deck {
     padding: 10px;
@@ -844,6 +844,9 @@ footer {
     width: 100%;
   }
   @include mQ($large){
+    &> ul {
+      padding: 0;
+    }
     h3 {
       font-size: 1em;
     }
@@ -870,6 +873,9 @@ footer {
 
     padding: 5px;
     margin: 0 auto;
+    &> ul {
+      padding: 0;
+    }
     h3{
       font-size: 0.8em;
     }
@@ -878,14 +884,14 @@ footer {
 
       margin: 7.5px auto;
       ul{
-        width: 400px;
+        width: 440px;
         li{
-          width: 50px;
+          width: 55px;
           p {
 
             top: 6px;
             left: 15%;
-            font-size: 5px;
+            font-size: 6px;
 
             text-shadow: #000 -1px 0px, #000 0px 1px, #000 1px 0px, #000 0px -1px;
           }
@@ -903,19 +909,22 @@ footer {
         width: 4%;
       }
     }
+    &> ul {
+      padding: 0;
+    }
     ul li.deck {
       padding: 5px;
 
       margin: 5px auto;
       ul{
-        width: 200px;
+        width: 240px;
         padding-left: 5px;
         li{
-          width: 25px;
+          width: 30px;
           p {
             top: 3px;
             left: 15%;
-            font-size: 3px;
+            font-size: 4px;
           }
         }
 

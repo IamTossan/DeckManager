@@ -1186,6 +1186,7 @@ footer p {
 
 #deck-manager > ul {
   list-style-type: none;
+  padding: 0;
 }
 
 #deck-manager ul li.deck {
@@ -1251,6 +1252,9 @@ footer p {
 }
 
 @media screen and (max-width: 800px) {
+  #deck-manager > ul {
+    padding: 0;
+  }
   #deck-manager h3 {
     font-size: 1em;
   }
@@ -1276,6 +1280,9 @@ footer p {
     padding: 5px;
     margin: 0 auto;
   }
+  #deck-manager > ul {
+    padding: 0;
+  }
   #deck-manager h3 {
     font-size: 0.8em;
   }
@@ -1284,15 +1291,15 @@ footer p {
     margin: 7.5px auto;
   }
   #deck-manager ul li.deck ul {
-    width: 400px;
+    width: 440px;
   }
   #deck-manager ul li.deck ul li {
-    width: 50px;
+    width: 55px;
   }
   #deck-manager ul li.deck ul li p {
     top: 6px;
     left: 15%;
-    font-size: 5px;
+    font-size: 6px;
     text-shadow: #000 -1px 0px, #000 0px 1px, #000 1px 0px, #000 0px -1px;
   }
 }
@@ -1305,21 +1312,24 @@ footer p {
     height: 4%;
     width: 4%;
   }
+  #deck-manager > ul {
+    padding: 0;
+  }
   #deck-manager ul li.deck {
     padding: 5px;
     margin: 5px auto;
   }
   #deck-manager ul li.deck ul {
-    width: 200px;
+    width: 240px;
     padding-left: 5px;
   }
   #deck-manager ul li.deck ul li {
-    width: 25px;
+    width: 30px;
   }
   #deck-manager ul li.deck ul li p {
     top: 3px;
     left: 15%;
-    font-size: 3px;
+    font-size: 4px;
   }
   #deck-manager > ul {
     margin: 5px auto;
