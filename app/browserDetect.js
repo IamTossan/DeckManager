@@ -19,7 +19,9 @@ linkElt.setAttribute('typel', "text/css");
 
 
 
-if (isOpera || isFirefox || isSafari || isIE || isEdge || isChrome || isBlink) {
+if (isFirefox) {
+  linkElt.setAttribute("href", "content/css/styleFirefox.css");
+} else {
   linkElt.setAttribute("href", "content/css/style.css");
 }
 

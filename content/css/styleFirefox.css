@@ -399,6 +399,7 @@ footer p {
   width: 130px;
   position: relative;
   padding-top: 5px;
+  padding-left: 2.5%;
 }
 
 #cardFilter div div:nth-child(4) {
@@ -462,10 +463,12 @@ footer p {
   border: 1px solid #0f378d;
 }
 
+#cardFilter div div button::-moz-focus-inner {
+  border: 0;
+}
+
 #cardFilter div div input[type="checkbox"] {
-  opacity: 0;
-  width: 0;
-  margin: 0;
+  display: none;
 }
 
 #cardFilter div div img[src$='troop.svg'], #cardFilter div div img[src$='spell.svg'], #cardFilter div div img[src$='building.svg'] {
@@ -772,7 +775,7 @@ footer p {
     width: 180px;
   }
   #cardFilter div div:nth-child(3) {
-    width: 120px;
+    width: 130px;
   }
   #cardFilter div div img[src$="search.svg"] {
     top: 25%;
@@ -811,6 +814,9 @@ footer p {
   #cardFilter div div:nth-child(2) {
     width: 180px;
   }
+  #cardFilter div div:nth-child(3) {
+    width: 110px;
+  }
   #cardFilter div div input[type="text"] {
     width: 100px;
     margin-left: 10px;
@@ -826,6 +832,9 @@ footer p {
     border-radius: 4px;
     font-size: 0.5em;
     padding: 1px 3px;
+  }
+  #cardFilter div div img[src$='no.svg'] {
+    top: 6px;
   }
   #cardFilter div div input[type="range"] {
     width: 80px;
@@ -849,6 +858,9 @@ footer p {
   #cardFilter div div:nth-child(2) {
     width: 160px;
     margin-left: 25px;
+  }
+  #cardFilter div div:nth-child(3) {
+    width: 90px;
   }
   #cardFilter div div:nth-child(4) {
     width: 120px;
@@ -878,18 +890,20 @@ footer p {
     border-bottom: none;
   }
   #cardFilter div div img[src$="no.svg"] {
-    top: 8px;
+    top: 11px;
   }
   #cardFilter div div img[src$="no.svg"]:hover {
     border-bottom: none;
   }
   #cardFilter div div input[type="range"] {
     width: 50px;
+    position: absolute;
+    top: -4px;
   }
   #cardFilter div div p:last-child {
     font-size: 0.3em;
     position: absolute;
-    top: -6px;
+    top: -15px;
     left: 0;
   }
 }

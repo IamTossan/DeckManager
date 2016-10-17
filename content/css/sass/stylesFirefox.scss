@@ -385,6 +385,7 @@ footer {
     width: 130px;
     position: relative;
     padding-top: 5px;
+    padding-left: 2.5%;
   }
   div:nth-child(4){
     width: 265px;
@@ -431,10 +432,11 @@ footer {
         border: 1px solid $blue;
       }
     }
+    button::-moz-focus-inner {
+      border: 0;
+    }
     input[type="checkbox"]{
-      opacity: 0;
-      width: 0;
-      margin: 0;
+      display: none;
 
     }
     img[src$='troop.svg'], img[src$='spell.svg'], img[src$='building.svg']{
@@ -481,7 +483,7 @@ footer {
     }
     div:nth-child(3){
 
-      width: 120px;
+      width: 130px;
 
     }
     div {
@@ -525,6 +527,9 @@ footer {
     div:nth-child(2){
       width: 180px;
     }
+    div:nth-child(3){
+      width: 110px;
+    }
 
     div {
 
@@ -543,6 +548,9 @@ footer {
         border-radius: 4px;
         font-size: 0.5em;
         padding: 1px 3px;
+      }
+      img[src$='no.svg']{
+        top: 6px;
       }
       input[type="range"] {
         width: 80px;
@@ -569,6 +577,9 @@ footer {
       width: 160px;
       margin-left: 25px;
 
+    }
+    div:nth-child(3){
+      width: 90px;
     }
     div:nth-child(4){
       width: 120px;
@@ -605,20 +616,21 @@ footer {
         }
       }
       img[src$="no.svg"]{
-        top: 8px;
+        top: 11px;
         &:hover{
           border-bottom: none;
         }
       }
       input[type="range"] {
         width: 50px;
-
+        position: absolute;
+        top: -4px;
       }
 
       p:last-child {
         font-size: 0.3em;
         position: absolute;
-        top: -6px;
+        top: -15px;
         left: 0;
 
       }
