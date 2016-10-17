@@ -1,7 +1,8 @@
 @font-face {
   font-family: clash;
-  src: url("clash.svg");
-  src: url("clash.ttf");
+  /*src: url("clash.woff");
+  src: url("clash.ttf");*/
+  src: url("clash.woff") format("woff"), url("clash.ttf") format("truetype");
 }
 
 body {
@@ -121,9 +122,8 @@ header li a:hover {
     letter-spacing: 1px;
   }
   header ul {
-    margin-right: 5px;
-    margin-bottom: 5px;
-    padding-left: 10px;
+    margin: 3px auto;
+    padding-left: 0;
   }
   header li {
     margin-left: 0px;
@@ -322,8 +322,13 @@ footer p {
     width: 60px;
   }
   #cards ul p {
-    font-size: 5px;
-    top: 9px;
+    font-size: 4px;
+    top: 8px;
+  }
+  @supports (-webkit-appearance: none) and (not (overflow: -webkit-marquee)) and (not (-ms-ime-align: auto)) and (not (-moz-appearance: none)) {
+    #cards ul p {
+      font-size: 8px;
+    }
   }
 }
 
@@ -379,7 +384,38 @@ footer p {
   position: relative;
 }
 
-#cardFilter div div:nth-child(1) input {
+#cardFilter div div:nth-child(2) {
+  display: inline-block;
+  width: 180px;
+}
+
+#cardFilter div div:nth-child(3) {
+  display: inline-block;
+  width: 150px;
+  position: relative;
+  padding-top: 5px;
+}
+
+#cardFilter div div:nth-child(4) {
+  width: 245px;
+  position: relative;
+}
+
+#cardFilter div img {
+  height: 20px;
+  width: 20px;
+  padding-bottom: 2px;
+}
+
+#cardFilter div div {
+  /***** THUMB ****************/
+  /* Special styling for WebKit/Blink */
+  /* All the same stuff for Firefox */
+  /* All the same stuff for IE */
+  /**********  TRACK **********/
+}
+
+#cardFilter div div input[type="text"] {
   border: 0;
   width: 125px;
   margin-left: 25px;
@@ -390,27 +426,22 @@ footer p {
   border-radius: 0;
 }
 
-#cardFilter div div:nth-child(1) input:focus {
+#cardFilter div div input[type="text"]:focus {
   outline: none;
 }
 
-#cardFilter div div:nth-child(1) img {
+#cardFilter div div img[src$="search.svg"] {
   position: absolute;
   left: 0;
-  top: 10%;
+  top: 17.5%;
 }
 
-#cardFilter div div:nth-child(2) {
-  display: inline-block;
-  width: 180px;
-}
-
-#cardFilter div div:nth-child(2) p {
+#cardFilter div div p:first-child {
   display: inline-block;
   font-size: 0.85em;
 }
 
-#cardFilter div div:nth-child(2) button {
+#cardFilter div div button {
   margin-left: 3px;
   font-family: "trebuchet ms";
   color: #0f378d;
@@ -418,45 +449,175 @@ footer p {
   border: 1px solid #ccc;
 }
 
-#cardFilter div div:nth-child(2) button:focus {
+#cardFilter div div button:focus {
   outline: none;
 }
 
-#cardFilter div div:nth-child(2) button:hover {
+#cardFilter div div button:hover {
   border: 1px solid #0f378d;
 }
 
-#cardFilter div div:nth-child(3) {
-  display: inline-block;
-  width: 150px;
-}
-
-#cardFilter div div:nth-child(4) {
-  width: 245px;
-  position: relative;
-}
-
-#cardFilter div div:nth-child(4) input {
-  display: inline-block;
-  width: 150px;
+#cardFilter div div input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
   margin: 0;
 }
 
-#cardFilter div div:nth-child(4) p {
-  font-size: 0.7em;
+#cardFilter div div img[src$='troop.svg'], #cardFilter div div img[src$='spell.svg'], #cardFilter div div img[src$='building.svg'] {
+  border-bottom: 2px solid #eee;
+}
+
+#cardFilter div div img[src$='troop.svg']:hover, #cardFilter div div img[src$='spell.svg']:hover, #cardFilter div div img[src$='building.svg']:hover {
+  border-bottom: 2px solid red;
+}
+
+#cardFilter div div img[src$='no.svg'] {
   position: absolute;
-  top: -3px;
-  left: 155px;
-  display: inline-block;
+  z-index: 1;
+}
+
+#cardFilter div div img[src$='no.svg']:hover {
+  border-bottom: 2px solid green;
 }
 
 #cardFilter div div input[type=range] {
   -webkit-appearance: none;
-  margin: 9px 0;
+  /* Hides the slider so that custom slider can be made */
+  background: transparent;
+  /* Otherwise white in Chrome */
+}
+
+#cardFilter div div input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
 }
 
 #cardFilter div div input[type=range]:focus {
   outline: none;
+  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+#cardFilter div div input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#cardFilter div div input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 10px;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -10px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  /* Add cool effects to your sliders! */
+}
+
+@media screen and (max-width: 800px) {
+  #cardFilter div div input[type=range]::-webkit-slider-thumb {
+    height: 22px;
+    width: 8px;
+    border-radius: 3px;
+    margin-top: -9px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter div div input[type=range]::-webkit-slider-thumb {
+    height: 18px;
+    width: 6px;
+    border-radius: 3px;
+    margin-top: -9px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #cardFilter div div input[type=range]::-webkit-slider-thumb {
+    height: 12px;
+    width: 4px;
+    border-radius: 2px;
+    margin-top: -5px;
+    border: 0.25px solid #0f378d;
+  }
+}
+
+#cardFilter div div input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 10px;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  #cardFilter div div input[type=range]::-moz-range-thumb {
+    height: 22px;
+    width: 8px;
+    border-radius: 3px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter div div input[type=range]::-moz-range-thumb {
+    height: 18px;
+    width: 6px;
+    border-radius: 3px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #cardFilter div div input[type=range]::-moz-range-thumb {
+    height: 12px;
+    width: 4px;
+    border-radius: 2px;
+    border: 0.25px solid #0f378d;
+  }
+}
+
+#cardFilter div div input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 10px;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  #cardFilter div div input[type=range]::-ms-thumb {
+    height: 22px;
+    width: 8px;
+    border-radius: 3px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter div div input[type=range]::-ms-thumb {
+    height: 18px;
+    width: 6px;
+    border-radius: 3px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #cardFilter div div input[type=range]::-ms-thumb {
+    height: 12px;
+    width: 4px;
+    border-radius: 2px;
+    border: 0.25px solid #0f378d;
+  }
 }
 
 #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
@@ -465,24 +626,32 @@ footer p {
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   background: #0f378d;
-  border-radius: 25px;
-  border: 1px solid #000000;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
 }
 
-#cardFilter div div input[type=range]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #0f378d;
-  height: 26px;
-  width: 16px;
-  border-radius: 6px;
-  background: #ffffff;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -10px;
+@media screen and (max-width: 800px) {
+  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
+    height: 6px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
+    height: 4px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
+    height: 2px;
+    border: none;
+  }
 }
 
 #cardFilter div div input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #1449bb;
+  background: #0f378d;
 }
 
 #cardFilter div div input[type=range]::-moz-range-track {
@@ -491,18 +660,28 @@ footer p {
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   background: #0f378d;
-  border-radius: 25px;
-  border: 1px solid #000000;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
 }
 
-#cardFilter div div input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #0f378d;
-  height: 26px;
-  width: 16px;
-  border-radius: 6px;
-  background: #ffffff;
-  cursor: pointer;
+@media screen and (max-width: 800px) {
+  #cardFilter div div input[type=range]::-moz-range-track {
+    height: 6px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter div div input[type=range]::-moz-range-track {
+    height: 4px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #cardFilter div div input[type=range]::-moz-range-track {
+    height: 2px;
+    border: none;
+  }
 }
 
 #cardFilter div div input[type=range]::-ms-track {
@@ -511,45 +690,64 @@ footer p {
   cursor: pointer;
   background: transparent;
   border-color: transparent;
+  border-width: 16px 0;
   color: transparent;
 }
 
+@media screen and (max-width: 800px) {
+  #cardFilter div div input[type=range]::-ms-track {
+    height: 6px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter div div input[type=range]::-ms-track {
+    height: 4px;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  #cardFilter div div input[type=range]::-ms-track {
+    height: 2px;
+    border: none;
+  }
+}
+
 #cardFilter div div input[type=range]::-ms-fill-lower {
-  background: #0a255f;
-  border: 1px solid #000000;
-  border-radius: 50px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-#cardFilter div div input[type=range]::-ms-fill-upper {
   background: #0f378d;
-  border: 1px solid #000000;
-  border-radius: 50px;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-}
-
-#cardFilter div div input[type=range]::-ms-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #0f378d;
-  height: 26px;
-  width: 16px;
-  border-radius: 6px;
-  background: #ffffff;
-  cursor: pointer;
-  height: 8px;
 }
 
 #cardFilter div div input[type=range]:focus::-ms-fill-lower {
   background: #0f378d;
 }
 
-#cardFilter div div input[type=range]:focus::-ms-fill-upper {
-  background: #1449bb;
+#cardFilter div div input[type=range]::-ms-fill-upper {
+  background: #0f378d;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 
-#cardFilter div img {
-  height: 20px;
-  width: 20px;
+#cardFilter div div input[type=range]:focus::-ms-fill-upper {
+  background: #0f378d;
+}
+
+#cardFilter div div input[type="range"] {
+  display: inline-block;
+  width: 150px;
+  margin: 0;
+}
+
+#cardFilter div div p:last-child {
+  font-size: 0.7em;
+  position: absolute;
+  top: -5px;
+  left: 155px;
+  display: inline-block;
 }
 
 @media screen and (max-width: 800px) {
@@ -561,112 +759,34 @@ footer p {
     width: 150px;
     padding: 5px;
   }
-  #cardFilter div div:nth-child(1) input {
-    width: 115px;
-    margin-left: 20px;
-  }
   #cardFilter div div:nth-child(2) {
     width: 180px;
   }
-  #cardFilter div div:nth-child(2) p {
+  #cardFilter div div:nth-child(3) {
+    width: 120px;
+  }
+  #cardFilter div div img[src$="search.svg"] {
+    top: 25%;
+  }
+  #cardFilter div div input[type="text"] {
+    width: 115px;
+    margin-left: 20px;
+  }
+  #cardFilter div div p:first-child {
     font-size: 0.6em;
   }
-  #cardFilter div div:nth-child(2) button {
+  #cardFilter div div button {
     margin-left: 2px;
     border-radius: 4px;
     font-size: 0.6em;
   }
-  #cardFilter div div:nth-child(4) input {
+  #cardFilter div div input[type="range"] {
     width: 100px;
   }
-  #cardFilter div div:nth-child(4) p {
+  #cardFilter div div p:last-child {
     font-size: 0.7em;
-    top: -2px;
+    top: -5px;
     left: 104px;
-  }
-  #cardFilter div div input[type=range] {
-    -webkit-appearance: none;
-    margin: 8.4px 0;
-  }
-  #cardFilter div div input[type=range]:focus {
-    outline: none;
-  }
-  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 6.2px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #0f378d;
-    border-radius: 25px;
-    border: 1px solid #000000;
-  }
-  #cardFilter div div input[type=range]::-webkit-slider-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #0f378d;
-    height: 23px;
-    width: 12px;
-    border-radius: 6px;
-    background: #ffffff;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -9.4px;
-  }
-  #cardFilter div div input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #0f378d;
-  }
-  #cardFilter div div input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 6.2px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #0f378d;
-    border-radius: 25px;
-    border: 1px solid #000000;
-  }
-  #cardFilter div div input[type=range]::-moz-range-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #0f378d;
-    height: 23px;
-    width: 12px;
-    border-radius: 6px;
-    background: #ffffff;
-    cursor: pointer;
-  }
-  #cardFilter div div input[type=range]::-ms-track {
-    width: 100%;
-    height: 6.2px;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  #cardFilter div div input[type=range]::-ms-fill-lower {
-    background: #0f378d;
-    border: 1px solid #000000;
-    border-radius: 50px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  }
-  #cardFilter div div input[type=range]::-ms-fill-upper {
-    background: #0f378d;
-    border: 1px solid #000000;
-    border-radius: 50px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  }
-  #cardFilter div div input[type=range]::-ms-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #0f378d;
-    height: 23px;
-    width: 12px;
-    border-radius: 6px;
-    background: #ffffff;
-    cursor: pointer;
-    height: 6.2px;
-  }
-  #cardFilter div div input[type=range]:focus::-ms-fill-lower {
-    background: #0f378d;
-  }
-  #cardFilter div div input[type=range]:focus::-ms-fill-upper {
-    background: #0f378d;
   }
 }
 
@@ -679,121 +799,32 @@ footer p {
     width: 120px;
     padding: 5px;
   }
-  #cardFilter div div:nth-child(1) input {
-    width: 100px;
-    margin-left: 10px;
-  }
-  #cardFilter div div:nth-child(1) img {
-    top: 37.5%;
-  }
   #cardFilter div div:nth-child(2) {
     width: 180px;
   }
-  #cardFilter div div:nth-child(2) p {
+  #cardFilter div div input[type="text"] {
+    width: 100px;
+    margin-left: 10px;
+  }
+  #cardFilter div div img[src$="search.svg"] {
+    top: 37.5%;
+  }
+  #cardFilter div div p:first-child {
     font-size: 0.5em;
   }
-  #cardFilter div div:nth-child(2) button {
+  #cardFilter div div button {
     margin-left: 2px;
     border-radius: 4px;
     font-size: 0.5em;
     padding: 1px 3px;
   }
-  #cardFilter div div:nth-child(3) input {
-    height: 10px;
-    width: 10px;
-    margin: 2px 2px;
-  }
-  #cardFilter div div:nth-child(4) input {
+  #cardFilter div div input[type="range"] {
     width: 80px;
   }
-  #cardFilter div div:nth-child(4) p {
+  #cardFilter div div p:last-child {
     font-size: 0.5em;
     top: 0px;
     left: 83px;
-  }
-  #cardFilter div div input[type=range] {
-    -webkit-appearance: none;
-    margin: 6.5px 0;
-  }
-  #cardFilter div div input[type=range]:focus {
-    outline: none;
-  }
-  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 4px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #0f378d;
-    border-radius: 25px;
-    border: 1px solid #000000;
-  }
-  #cardFilter div div input[type=range]::-webkit-slider-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #0f378d;
-    height: 17px;
-    width: 9px;
-    border-radius: 6px;
-    background: #ffffff;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -7.5px;
-  }
-  #cardFilter div div input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #0f378d;
-  }
-  #cardFilter div div input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 4px;
-    cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: #0f378d;
-    border-radius: 25px;
-    border: 1px solid #000000;
-  }
-  #cardFilter div div input[type=range]::-moz-range-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #0f378d;
-    height: 17px;
-    width: 9px;
-    border-radius: 6px;
-    background: #ffffff;
-    cursor: pointer;
-  }
-  #cardFilter div div input[type=range]::-ms-track {
-    width: 100%;
-    height: 4px;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  #cardFilter div div input[type=range]::-ms-fill-lower {
-    background: #0f378d;
-    border: 1px solid #000000;
-    border-radius: 50px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  }
-  #cardFilter div div input[type=range]::-ms-fill-upper {
-    background: #0f378d;
-    border: 1px solid #000000;
-    border-radius: 50px;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  }
-  #cardFilter div div input[type=range]::-ms-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 1px solid #0f378d;
-    height: 17px;
-    width: 9px;
-    border-radius: 6px;
-    background: #ffffff;
-    cursor: pointer;
-    height: 4px;
-  }
-  #cardFilter div div input[type=range]:focus::-ms-fill-lower {
-    background: #0f378d;
-  }
-  #cardFilter div div input[type=range]:focus::-ms-fill-upper {
-    background: #0f378d;
   }
 }
 
@@ -806,128 +837,51 @@ footer p {
     width: 60px;
     padding: 3px;
   }
-  #cardFilter div div:nth-child(1) input {
+  #cardFilter div div:nth-child(2) {
+    width: 160px;
+    margin-left: 25px;
+  }
+  #cardFilter div div:nth-child(4) {
+    width: 120px;
+    position: relative;
+    height: 100%;
+  }
+  #cardFilter div div input[type="text"] {
     width: 45px;
     margin-left: 7px;
     font-size: 0.4em;
     position: absolute;
     top: -50%;
   }
-  #cardFilter div div:nth-child(1) img {
+  #cardFilter div div img[src$="search.svg"] {
     top: -30%;
   }
-  #cardFilter div div:nth-child(2) {
-    width: 160px;
-    margin-left: 25px;
-  }
-  #cardFilter div div:nth-child(2) p {
-    font-size: 0.2em;
-  }
-  #cardFilter div div:nth-child(2) button {
+  #cardFilter div div button {
     margin-left: 1px;
     border-radius: 3px;
     font-size: 0.3em;
     padding: 1px 3px;
   }
-  #cardFilter div div:nth-child(3) input {
-    height: 7.5px;
-    width: 7.5px;
-    margin: 2px 2px;
+  #cardFilter div div img[src$='troop.svg'], #cardFilter div div img[src$='spell.svg'], #cardFilter div div img[src$='building.svg'] {
+    border-bottom: none;
   }
-  #cardFilter div div:nth-child(4) {
-    width: 120px;
+  #cardFilter div div img[src$='troop.svg']:hover, #cardFilter div div img[src$='spell.svg']:hover, #cardFilter div div img[src$='building.svg']:hover {
+    border-bottom: none;
   }
-  #cardFilter div div:nth-child(4) input {
+  #cardFilter div div img[src$="no.svg"] {
+    top: 8px;
+  }
+  #cardFilter div div img[src$="no.svg"]:hover {
+    border-bottom: none;
+  }
+  #cardFilter div div input[type="range"] {
     width: 50px;
   }
-  #cardFilter div div:nth-child(4) p {
+  #cardFilter div div p:last-child {
     font-size: 0.3em;
+    position: absolute;
     top: -6px;
-    left: 5px;
-  }
-  #cardFilter div div input[type=range] {
-    -webkit-appearance: none;
-    margin: 4px 0;
-  }
-  #cardFilter div div input[type=range]:focus {
-    outline: none;
-  }
-  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #0f378d;
-    border-radius: 25px;
-    border: 0px solid #000000;
-  }
-  #cardFilter div div input[type=range]::-webkit-slider-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 0px solid #0f378d;
-    height: 10px;
-    width: 4px;
-    border-radius: 1px;
-    background: #ffffff;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -4px;
-  }
-  #cardFilter div div input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #0f378d;
-  }
-  #cardFilter div div input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-    background: #0f378d;
-    border-radius: 25px;
-    border: 0px solid #000000;
-  }
-  #cardFilter div div input[type=range]::-moz-range-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 0px solid #0f378d;
-    height: 10px;
-    width: 4px;
-    border-radius: 1px;
-    background: #ffffff;
-    cursor: pointer;
-  }
-  #cardFilter div div input[type=range]::-ms-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  #cardFilter div div input[type=range]::-ms-fill-lower {
-    background: #0f378d;
-    border: 0px solid #000000;
-    border-radius: 50px;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-  }
-  #cardFilter div div input[type=range]::-ms-fill-upper {
-    background: #0f378d;
-    border: 0px solid #000000;
-    border-radius: 50px;
-    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-  }
-  #cardFilter div div input[type=range]::-ms-thumb {
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 0px solid #0f378d;
-    height: 10px;
-    width: 4px;
-    border-radius: 1px;
-    background: #ffffff;
-    cursor: pointer;
-    height: 2px;
-  }
-  #cardFilter div div input[type=range]:focus::-ms-fill-lower {
-    background: #0f378d;
-  }
-  #cardFilter div div input[type=range]:focus::-ms-fill-upper {
-    background: #0f378d;
+    left: 0;
   }
 }
 
@@ -1138,6 +1092,9 @@ footer p {
   #cardFilter #creator form {
     font-size: 0.8em;
   }
+  #cardFilter #creator form input:last-of-type {
+    font-size: 0.8em;
+  }
   #cardFilter #creator ul {
     padding-left: 30px;
   }
@@ -1159,6 +1116,10 @@ footer p {
   }
   #cardFilter #creator form input:first-of-type {
     width: 120px;
+  }
+  #cardFilter #creator form input:last-of-type {
+    font-size: 0.7em;
+    padding: 0;
   }
   #cardFilter #creator ul {
     padding-left: 20px;
@@ -1188,12 +1149,12 @@ footer p {
     position: inherit;
   }
   #cardFilter #creator form input:last-of-type {
-    height: 12px;
-    padding: 2px;
+    height: 10px;
     margin: 5px;
     width: 25px;
     border-radius: 4px;
     position: inherit;
+    font-size: 0.5em;
   }
   #cardFilter #creator ul {
     padding-left: 5px;

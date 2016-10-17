@@ -11,9 +11,15 @@
         <button ng-click="myOrder = 'name'" >Name</button>
       </div>
       <div>
-        <input type="checkbox" ng-click="typeFilter[0] = (typeFilter[0] == 'troop') ? 'zz' : 'troop'" value="Troop" id="troop" checked/><label for="troop"><img src="../content/images/troop.svg" /></label>
-        <input type="checkbox" ng-click="typeFilter[1] = (typeFilter[1] == 'spell') ? 'zz' : 'spell'" value="Spell" id="spell" checked/><label for="spell"><img src="../content/images/spell.svg" /></label>
-        <input type="checkbox" ng-click="typeFilter[2] = (typeFilter[2] == 'building') ? 'zz' : 'building'" value="Building" id="building" checked/><label for="building"><img src="../content/images/building.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[0] = 'zz'" value="Troop" id="troop" checked/>
+          <img src="../content/images/no.svg" ng-hide="typeFilter[0] != 'zz'" ng-click="typeFilter[0] = 'troop'"/>
+          <label for="troop"><img src="../content/images/troop.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[1] = 'zz'" value="Spell" id="spell" checked/>
+          <img src="../content/images/no.svg" ng-hide="typeFilter[1] != 'zz'" ng-click="typeFilter[1] = 'spell'" />
+          <label for="spell"><img src="../content/images/spell.svg" /></label>
+        <input type="checkbox" ng-click="typeFilter[2] = 'zz'" value="Building" id="building" checked/>
+          <img src="../content/images/no.svg" ng-hide="typeFilter[2] != 'zz'" ng-click="typeFilter[2] = 'building'" />
+          <label for="building"><img src="../content/images/building.svg" /></label>
       </div>
       <div>
         <input type="range" min=0 max=9 ng-model="arena"/>

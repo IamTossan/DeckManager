@@ -2,8 +2,11 @@
 
 @font-face {
   font-family: clash;
-  src: url('clash.svg');
-  src: url('clash.ttf');
+  /*src: url("clash.woff");
+  src: url("clash.ttf");*/
+
+  src: url('clash.woff') format('woff'),
+       url('clash.ttf')  format('truetype');
 }
 
 $blue : #0f378d;
@@ -121,9 +124,9 @@ header {
       letter-spacing: 1px;
     }
     ul {
-      margin-right: 5px;
-      margin-bottom: 5px;
-      padding-left: 10px;
+
+      margin: 3px auto;
+      padding-left: 0;
     }
     li {
       margin-left: 0px;
@@ -315,8 +318,11 @@ footer {
       width: 60px;
     }
     p {
-      font-size: 5px;
-      top: 9px;
+      font-size: 4px;
+      top: 8px;
+      @include chrome {
+        font-size: 8px;
+      }
     }
   }
 }
@@ -360,14 +366,33 @@ footer {
 
 
 #cardFilter div{
-
-
   div:nth-child(1){
     display: inline-block;
     width: 150px;
     padding: 5px;
     position: relative;
-    input {
+    }
+  div:nth-child(2){
+    display: inline-block;
+    width: 180px;
+  }
+  div:nth-child(3){
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    padding-top: 5px;
+  }
+  div:nth-child(4){
+    width: 245px;
+    position: relative;
+  }
+  img {
+    height: 20px;
+    width: 20px;
+    padding-bottom: 2px;
+  }
+  div{
+    input[type="text"] {
       border: 0;
       width: 125px;
       margin-left: 25px;
@@ -380,16 +405,12 @@ footer {
         outline: none;
       }
     }
-    img {
+    img[src$="search.svg"] {
       position: absolute;
       left: 0;
-      top: 10%;
+      top: 17.5%;
     }
-  }
-  div:nth-child(2){
-    display: inline-block;
-    width: 180px;
-    p {
+    p:first-child {
       display: inline-block;
       font-size: 0.85em;
     }
@@ -406,34 +427,39 @@ footer {
         border: 1px solid $blue;
       }
     }
-  }
-  div:nth-child(3){
-    display: inline-block;
-    width: 150px;
-  }
-  div:nth-child(4){
-    width: 245px;
-    position: relative;
-    input {
+    input[type="checkbox"]{
+      opacity: 0;
+      width: 0;
+      margin: 0;
+
+    }
+    img[src$='troop.svg'], img[src$='spell.svg'], img[src$='building.svg']{
+      border-bottom: 2px solid #eee;
+      &:hover{
+        border-bottom: 2px solid red;
+      }
+    }
+    img[src$='no.svg']{
+      position: absolute;
+      z-index: 1;
+
+      &:hover{
+        border-bottom: 2px solid green;
+      }
+    }
+    @import "range";
+    input[type="range"] {
       display: inline-block;
       width: 150px;
       margin: 0;
     }
-    p {
+    p:last-child {
       font-size: 0.7em;
       position: absolute;
-      top: -3px;
+      top: -5px;
       left: 155px;
       display: inline-block;
     }
-
-  }
-  div {
-    @import 'slide';
-  }
-  img {
-    height: 20px;
-    width: 20px;
   }
 
   @include mQ($large) {
@@ -445,14 +471,24 @@ footer {
     div:nth-child(1){
       width: 150px;
       padding: 5px;
-      input {
-        width: 115px;
-        margin-left: 20px;
-      }
     }
     div:nth-child(2){
       width: 180px;
-      p {
+    }
+    div:nth-child(3){
+
+      width: 120px;
+
+    }
+    div {
+      img[src$="search.svg"] {
+        top: 25%;
+      }
+      input[type="text"] {
+        width: 115px;
+        margin-left: 20px;
+      }
+      p:first-child{
         font-size: 0.6em;
       }
       button {
@@ -460,21 +496,17 @@ footer {
         border-radius: 4px;
         font-size: 0.6em;
       }
-    }
-    div:nth-child(4){
-      input {
+
+      input[type="range"]{
         width: 100px;
       }
-      p {
+      p:last-child{
         font-size: 0.7em;
-        top: -2px;
+        top: -5px;
         left: 104px;
       }
+    }
 
-    }
-    div {
-      @import "slideLarge";
-    }
   }
   @include mQ($medium) {
 
@@ -485,18 +517,21 @@ footer {
     div:nth-child(1){
       width: 120px;
       padding: 5px;
-
-      input {
-        width: 100px;
-        margin-left: 10px;
-      }
-      img {
-        top: 37.5%;
-      }
     }
     div:nth-child(2){
       width: 180px;
-      p {
+    }
+
+    div {
+
+      input[type="text"] {
+        width: 100px;
+        margin-left: 10px;
+      }
+      img[src$="search.svg"] {
+        top: 37.5%;
+      }
+      p:first-child {
         font-size: 0.5em;
       }
       button {
@@ -505,27 +540,14 @@ footer {
         font-size: 0.5em;
         padding: 1px 3px;
       }
-    }
-    div:nth-child(3){
-      input{
-        height: 10px;
-        width: 10px;
-        margin: 2px 2px;
-      }
-    }
-    div:nth-child(4){
-      input {
+      input[type="range"] {
         width: 80px;
       }
-      p {
+      p:last-child {
         font-size: 0.5em;
         top: 0px;
         left: 83px;
       }
-
-    }
-    div {
-      @import "slideMedium";
     }
   }
   @include mQ($small) {
@@ -537,51 +559,65 @@ footer {
     div:nth-child(1){
       width: 60px;
       padding: 3px;
-      input {
+
+    }
+    div:nth-child(2){
+      width: 160px;
+      margin-left: 25px;
+
+    }
+    div:nth-child(4){
+      width: 120px;
+      position: relative;
+      height: 100%;
+
+    }
+    div {
+
+      input[type="text"] {
         width: 45px;
         margin-left: 7px;
         font-size: 0.4em;
         position: absolute;
         top: -50%;
       }
-      img {
+      img[src$="search.svg"] {
         top: -30%;
       }
-    }
-    div:nth-child(2){
-      width: 160px;
-      margin-left: 25px;
-      p {
-        font-size: 0.2em;
-      }
+
       button {
+
         margin-left: 1px;
         border-radius: 3px;
         font-size: 0.3em;
         padding: 1px 3px;
+
+
       }
-    }
-    div:nth-child(3){
-      input{
-        height: 7.5px;
-        width: 7.5px;
-        margin: 2px 2px;
+      img[src$='troop.svg'], img[src$='spell.svg'], img[src$='building.svg']{
+        border-bottom: none;
+        &:hover{
+          border-bottom: none;
+        }
       }
-    }
-    div:nth-child(4){
-      width: 120px;
-      input {
+      img[src$="no.svg"]{
+        top: 8px;
+        &:hover{
+          border-bottom: none;
+        }
+      }
+      input[type="range"] {
         width: 50px;
-      }
-      p {
-        font-size: 0.3em;
-        top: -6px;
-        left: 5px;
+
       }
 
-    }
-    div {
-      @import "slideSmall";
+      p:last-child {
+        font-size: 0.3em;
+        position: absolute;
+        top: -6px;
+        left: 0;
+
+      }
     }
   }
 }
@@ -763,6 +799,9 @@ footer {
     height: 116px;
     form {
       font-size: 0.8em;
+      input:last-of-type{
+        font-size: 0.8em;
+      }
     }
     ul{
       padding-left: 30px;
@@ -781,6 +820,10 @@ footer {
       font-size: 0.6em;
       input:first-of-type{
         width: 120px;
+      }
+      input:last-of-type{
+        font-size: 0.7em;
+        padding: 0;
       }
     }
     ul{
@@ -807,12 +850,12 @@ footer {
         position: inherit;
       }
       input:last-of-type{
-        height: 12px;
-        padding: 2px;
+        height: 10px;
         margin: 5px;
         width: 25px;
         border-radius: 4px;
         position: inherit;
+        font-size: 0.5em;
       }
     }
     ul{
