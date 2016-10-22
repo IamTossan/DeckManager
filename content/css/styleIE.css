@@ -1122,16 +1122,16 @@ main.ng-enter.ng-enter-active {
 }
 
 /********** CARD FILTERS ********/
+#cardFilter div div:nth-child(4) {
+  height: 30px;
+}
+
 #cardFilter div div {
   /***** THUMB ****************/
   /* Special styling for WebKit/Blink */
   /* All the same stuff for Firefox */
   /* All the same stuff for IE */
   /**********  TRACK **********/
-}
-
-#cardFilter div div button::-moz-focus-inner {
-  border: 0;
 }
 
 #cardFilter div div input[type=range] {
@@ -1398,23 +1398,37 @@ main.ng-enter.ng-enter-active {
   background: #0f378d;
 }
 
-@media screen and (max-width: 660px) {
+#cardFilter div div input[type="range"] {
+  top: -75%;
+  position: absolute;
+}
+
+#cardFilter div div p:last-child {
+  top: 0%;
+}
+
+@media screen and (max-width: 800px) {
+  #cardFilter div div input[type="range"] {
+    top: -75%;
+    position: absolute;
+  }
   #cardFilter div div p:last-child {
-    top: -2.5px;
+    top: 0%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #cardFilter div div input[type="range"] {
+    top: -70%;
+  }
+  #cardFilter div div p:last-child {
+    top: 5%;
   }
 }
 
 @media screen and (max-width: 520px) {
-  #cardFilter div div:nth-child(4) {
-    height: 25px;
-  }
   #cardFilter div div input[type="range"] {
+    top: -0%;
     position: absolute;
-    top: 25%;
-  }
-  #cardFilter div div p:last-child {
-    font-size: 0.3em;
-    position: absolute;
-    top: -10%;
   }
 }

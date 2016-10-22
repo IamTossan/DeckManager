@@ -41,16 +41,16 @@ myCRDeckApp.service('deckService', ['$http', function($http){
   });*/
   DeckService.decks = [
     {
-      "name": "deck 1",
-      "deck": ["Arrow", "Bomber", "Archers", "Knight", "Musketeer", "Tombstone", "Prince", "Fireball"]
+      "name": "Miner cycle deck",
+      "deck": ["Miner", "Mini P.E.K.K.A", "Fireball", "Minions", "Zap", "Hog Rider", "Spear Goblins", "Barbarians"]
     },
     {
-      "name": "deck 2",
-      "deck": ["Arrow", "Mini P.E.K.K.A", "Bomb Tower", "Goblins", "Minions", "Giant", "Witch", "Fireball"]
+      "name": "Payfecta",
+      "deck": ["Princess", "Mini P.E.K.K.A", "Miner", "Ice Wizard", "Minions", "Zap", "Barbarians", "Ice Spirit"]
     },
     {
-      "name": "deck 3",
-      "deck": ["Giant", "Bomber", "Archers", "Mini P.E.K.K.A", "Spear Goblins", "Goblin Hut", "Prince", "Fireball"]
+      "name": "Hog Cycle",
+      "deck": ["Poison", "Hog Rider", "Elixir Collector", "Mini P.E.K.K.A", "Princess", "Zap", "Ice Spirit", "Skeletons"]
     }
   ];
 

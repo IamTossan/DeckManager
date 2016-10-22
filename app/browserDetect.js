@@ -18,8 +18,11 @@ linkElt.setAttribute('rel', "stylesheet");
 linkElt.setAttribute('typel', "text/css");
 
 
-
-if (isFirefox) {
+if (isChrome) {
+  linkElt.setAttribute("href", "content/css/style.css");
+} else if (isIE) {
+  linkElt.setAttribute("href", "content/css/styleIE.css");
+} else if (isFirefox) {
   linkElt.setAttribute("href", "content/css/styleFirefox.css");
 } else {
   linkElt.setAttribute("href", "content/css/style.css");
