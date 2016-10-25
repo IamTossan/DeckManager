@@ -6,8 +6,8 @@ document.addEventListener("scroll", function(e){
 
     var cardFilter = document.getElementById("cardFilter");
     var height = document.getElementsByTagName("header")[0].offsetHeight + 5;
-
-
+    var cards = document.querySelector("#cards ul");
+    var marginFix = (cardFilter.clientHeight + 5).toString();
 
     var FIREFOX = /Firefox/i.test(navigator.userAgent);
 
@@ -17,14 +17,18 @@ document.addEventListener("scroll", function(e){
     if (FIREFOX || msie) {
       if (document.documentElement.scrollTop > height && !cardFilter.classList.contains("fixIt")) {
         cardFilter.setAttribute("class", "fixIt");
+        cards.style.marginTop = marginFix + "px";
       } else if ((document.documentElement.scrollTop <= height && cardFilter.classList.contains("fixIt"))) {
         cardFilter.removeAttribute("class");
+        cards.style.marginTop = "0";
       }
     } else {
       if (document.body.scrollTop > height && !cardFilter.classList.contains("fixIt")) {
         cardFilter.setAttribute("class", "fixIt");
+        cards.style.marginTop = marginFix + "px";
       } else if (document.body.scrollTop <= height && cardFilter.classList.contains("fixIt")) {
         cardFilter.removeAttribute("class");
+        cards.style.marginTop = "0";
       }
     }
 

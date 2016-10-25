@@ -33,34 +33,6 @@
     }
 
   }
-  @include mQ($medium) {
-
-    div {
-
-      input[type="range"] {
-
-        top: -70%;
-      }
-      p:last-child {
-        top: 5%;
-      }
-    }
-  }
-  @include mQ($small) {
 
 
-    div {
-
-
-      input[type="range"] {
-        top: -0%;
-        position: absolute;
-      }
-
-      p:last-child {
-
-
-      }
-    }
-  }
 }

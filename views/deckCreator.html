@@ -25,6 +25,8 @@
       </div>
       <div>
         <input type="range" min=0 max=9 ng-model="arena"/>
+        <button ng-click="arena = (arena == 0) ? 0 : arena - 1" id="arenaDown">&#171;</button>
+        <button ng-click="arena = (arena == 9) ? 9 : arena + 1" id="arenaUp">&#187;</button>
         <p>{{arenaName[arena]}}</p>
       </div>
     </div>

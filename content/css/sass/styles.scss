@@ -395,11 +395,13 @@ footer {
       border: 0;
       width: 125px;
       margin-left: 25px;
+      padding: 1%;
       border-bottom: 1px solid $blue;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
       border-radius: 0;
+      background-color: #f4f4f4;
       &:focus {
         outline: none;
       }
@@ -446,12 +448,15 @@ footer {
         border-bottom: 2px solid green;
       }
     }
-    
+
     input[type="range"] {
       display: inline-block;
       width: 150px;
 
       margin: 0;
+    }
+    button#arenaUp, button#arenaDown {
+      display: none;
     }
     p:last-child {
       font-size: 0.7em;
@@ -528,12 +533,30 @@ footer {
       }
 
       input[type="range"] {
-        width: 80px;
+        display: none;
+      }
+      button#arenaUp, button#arenaDown {
+        display: inline-block;
+        width: 15%;
+        text-align: center;
+        margin: 6px 0;
+
+        font-size: 0.7em;
+        box-sizing: border-box;
+      }
+      button#arenaUp{
+        float: right;
       }
       p:last-child {
         font-size: 0.5em;
-        top: 0px;
-        left: 83px;
+        position: inherit;
+        text-align: center;
+        width: 60%;
+        margin: 6px 2.5%;
+
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
       }
     }
   }
@@ -609,14 +632,16 @@ footer {
         }
       }
       input[type="range"] {
-        width: 80%;
-      }
 
+      }
+      button#arenaUp, button#arenaDown {
+
+      }
       p:last-child {
-        font-size: 0.3em;
-        position: absolute;
-        top: -7px;
-        left: 5%;
+        font-size: 0.2em;
+        position: inherit;
+        top: 0;
+        left: 0;
 
       }
     }
@@ -737,7 +762,8 @@ footer {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      border-radius: 3px;
+      border-radius: 0px;
+      padding: 0.5%;
       &.ng-touched.ng-invalid{
         border-bottom-color: red;
       }
@@ -833,6 +859,7 @@ footer {
         width: 45px;
         p{
           top: 6px;
+          left: -5px;
           font-size: 5px;
           text-shadow: #000 -1px 0px, #000 0px 1px, #000 1px 0px, #000 0px -1px;
         }
@@ -866,6 +893,7 @@ footer {
         p{
           top: 4px;
           font-size: 3px;
+          left: -3px;
         }
       }
     }

@@ -44,21 +44,7 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 3px;
     margin-top: -9px;
   }
-  @include mQ($medium){
-    height: 18px;
-    width: 6px;
-    border-radius: 3px;
-    margin-top: -9px;
-    box-shadow: none;
-  }
-  @include mQ($small){
-    height: 12px;
-    width: 4px;
-    border-radius: 2px;
-    margin-top: -5px;
-    border: none;
-    background: $blue;
-  }
+
 }
 
 /* All the same stuff for Firefox */
@@ -75,19 +61,7 @@ input[type=range]::-moz-range-thumb {
     width: 8px;
     border-radius: 3px;
   }
-  @include mQ($medium){
-    height: 18px;
-    width: 6px;
-    border-radius: 3px;
-    box-shadow: none;
-  }
-  @include mQ($small){
-    height: 12px;
-    width: 4px;
-    border-radius: 2px;
-    border: none;
-    background: $blue;
-  }
+
 }
 
 /* All the same stuff for IE */
@@ -105,20 +79,7 @@ input[type=range]::-ms-thumb {
     border-radius: 3px;
 
   }
-  @include mQ($medium){
-    height: 18px;
-    width: 6px;
-    border-radius: 3px;
-    box-shadow: none;
-  }
-  @include mQ($small){
-    height: 12px;
-    width: 4px;
-    border-radius: 2px;
-    border: none;
-    background: $blue;
-    z-index: 1;
-  }
+
 }
 
 /**********  TRACK **********/
@@ -135,15 +96,7 @@ input[type=range]::-webkit-slider-runnable-track {
     height: 6px;
 
   }
-  @include mQ($medium){
-    height: 4px;
-    box-shadow: none;
-  }
-  @include mQ($small){
-    height: 2px;
-    border: none;
 
-  }
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
@@ -162,15 +115,7 @@ input[type=range]::-moz-range-track {
     height: 6px;
 
   }
-  @include mQ($medium){
-    height: 4px;
-    box-shadow: none;
-  }
-  @include mQ($small){
-    height: 2px;
-    border: none;
 
-  }
 }
 
 input[type=range]::-ms-track {
@@ -185,15 +130,7 @@ input[type=range]::-ms-track {
     height: 6px;
 
   }
-  @include mQ($medium){
-    height: 4px;
-    box-shadow: none;
-  }
-  @include mQ($small){
-    height: 2px;
-    border: none;
-
-  }
+  
 }
 input[type=range]::-ms-fill-lower {
   background: $blue;

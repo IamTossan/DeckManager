@@ -404,11 +404,13 @@ footer p {
   border: 0;
   width: 125px;
   margin-left: 25px;
+  padding: 1%;
   border-bottom: 1px solid #0f378d;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border-radius: 0;
+  background-color: #f4f4f4;
 }
 
 #cardFilter div div input[type="text"]:focus {
@@ -470,6 +472,10 @@ footer p {
   display: inline-block;
   width: 150px;
   margin: 0;
+}
+
+#cardFilter div div button#arenaUp, #cardFilter div div button#arenaDown {
+  display: none;
 }
 
 #cardFilter div div p:last-child {
@@ -537,12 +543,28 @@ footer p {
     padding: 1px 3px;
   }
   #cardFilter div div input[type="range"] {
-    width: 80px;
+    display: none;
+  }
+  #cardFilter div div button#arenaUp, #cardFilter div div button#arenaDown {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    margin: 6px 0;
+    font-size: 0.7em;
+    box-sizing: border-box;
+  }
+  #cardFilter div div button#arenaUp {
+    float: right;
   }
   #cardFilter div div p:last-child {
     font-size: 0.5em;
-    top: 0px;
-    left: 83px;
+    position: inherit;
+    text-align: center;
+    width: 60%;
+    margin: 6px 2.5%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -610,14 +632,11 @@ footer p {
   #cardFilter div div img[src$="no.svg"]:hover {
     border-bottom: none;
   }
-  #cardFilter div div input[type="range"] {
-    width: 80%;
-  }
   #cardFilter div div p:last-child {
-    font-size: 0.3em;
-    position: absolute;
-    top: -7px;
-    left: 5%;
+    font-size: 0.2em;
+    position: inherit;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -752,7 +771,8 @@ footer p {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 3px;
+  border-radius: 0px;
+  padding: 0.5%;
 }
 
 #cardFilter #creator form input:first-of-type.ng-touched.ng-invalid {
@@ -865,6 +885,7 @@ footer p {
   }
   #cardFilter #creator ul li p {
     top: 6px;
+    left: -5px;
     font-size: 5px;
     text-shadow: #000 -1px 0px, #000 0px 1px, #000 1px 0px, #000 0px -1px;
   }
@@ -901,6 +922,7 @@ footer p {
   #cardFilter #creator ul li p {
     top: 4px;
     font-size: 3px;
+    left: -3px;
   }
 }
 
@@ -1186,27 +1208,6 @@ main.ng-enter.ng-enter-active {
   }
 }
 
-@media screen and (max-width: 660px) {
-  #cardFilter div div input[type=range]::-webkit-slider-thumb {
-    height: 18px;
-    width: 6px;
-    border-radius: 3px;
-    margin-top: -9px;
-    box-shadow: none;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  #cardFilter div div input[type=range]::-webkit-slider-thumb {
-    height: 12px;
-    width: 4px;
-    border-radius: 2px;
-    margin-top: -5px;
-    border: none;
-    background: #0f378d;
-  }
-}
-
 #cardFilter div div input[type=range]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
@@ -1222,25 +1223,6 @@ main.ng-enter.ng-enter-active {
     height: 22px;
     width: 8px;
     border-radius: 3px;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  #cardFilter div div input[type=range]::-moz-range-thumb {
-    height: 18px;
-    width: 6px;
-    border-radius: 3px;
-    box-shadow: none;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  #cardFilter div div input[type=range]::-moz-range-thumb {
-    height: 12px;
-    width: 4px;
-    border-radius: 2px;
-    border: none;
-    background: #0f378d;
   }
 }
 
@@ -1262,26 +1244,6 @@ main.ng-enter.ng-enter-active {
   }
 }
 
-@media screen and (max-width: 660px) {
-  #cardFilter div div input[type=range]::-ms-thumb {
-    height: 18px;
-    width: 6px;
-    border-radius: 3px;
-    box-shadow: none;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  #cardFilter div div input[type=range]::-ms-thumb {
-    height: 12px;
-    width: 4px;
-    border-radius: 2px;
-    border: none;
-    background: #0f378d;
-    z-index: 1;
-  }
-}
-
 #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 8px;
@@ -1295,20 +1257,6 @@ main.ng-enter.ng-enter-active {
 @media screen and (max-width: 800px) {
   #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
     height: 6px;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
-    height: 4px;
-    box-shadow: none;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  #cardFilter div div input[type=range]::-webkit-slider-runnable-track {
-    height: 2px;
-    border: none;
   }
 }
 
@@ -1332,20 +1280,6 @@ main.ng-enter.ng-enter-active {
   }
 }
 
-@media screen and (max-width: 660px) {
-  #cardFilter div div input[type=range]::-moz-range-track {
-    height: 4px;
-    box-shadow: none;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  #cardFilter div div input[type=range]::-moz-range-track {
-    height: 2px;
-    border: none;
-  }
-}
-
 #cardFilter div div input[type=range]::-ms-track {
   width: 100%;
   height: 8px;
@@ -1359,20 +1293,6 @@ main.ng-enter.ng-enter-active {
 @media screen and (max-width: 800px) {
   #cardFilter div div input[type=range]::-ms-track {
     height: 6px;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  #cardFilter div div input[type=range]::-ms-track {
-    height: 4px;
-    box-shadow: none;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  #cardFilter div div input[type=range]::-ms-track {
-    height: 2px;
-    border: none;
   }
 }
 
@@ -1398,23 +1318,8 @@ main.ng-enter.ng-enter-active {
   background: #0f378d;
 }
 
-@media screen and (max-width: 660px) {
-  #cardFilter div div p:last-child {
-    top: -2.5px;
-  }
-}
-
 @media screen and (max-width: 520px) {
   #cardFilter div div:nth-child(4) {
     height: 25px;
-  }
-  #cardFilter div div input[type="range"] {
-    position: absolute;
-    top: 25%;
-  }
-  #cardFilter div div p:last-child {
-    font-size: 0.3em;
-    position: absolute;
-    top: -10%;
   }
 }

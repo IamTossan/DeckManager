@@ -13,33 +13,13 @@
     }
     @import "range";
   }
-  @include mQ($medium){
-    div{
-      p:last-child{
-        top: -2.5px;
-      }
-    }
-  }
+
   @include mQ($small) {
     div:nth-child(4){
 
       height: 25px;
 
     }
-    div {
-      input[type="range"] {
-
-        position: absolute;
-        top: 25%;
-      }
-
-      p:last-child {
-        font-size: 0.3em;
-        position: absolute;
-        top: -10%;
-
-
-      }
-    }
+    
   }
 }
