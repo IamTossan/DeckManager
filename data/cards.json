@@ -60,7 +60,7 @@
 	"thumb": "content/images/cards/baby_dragon.png"
 }, {
 	"name": "Skeleton Army",
-	"elixir": 4,
+	"elixir": 3,
 	"arena": 0,
 	"type": "troop",
 	"thumb": "content/images/cards/skeleton_army.png"
@@ -215,6 +215,12 @@
 	"type": "troop",
 	"thumb": "content/images/cards/PEKKA.png"
 }, {
+	"name": "Inferno Dragon",
+	"elixir": 4,
+	"arena": 4,
+	"type": "troop",
+	"thumb": "content/images/cards/inferno_dragon.png"
+}, {
 	"name": "Lava Hound",
 	"elixir": 7,
 	"arena": 4,
@@ -257,6 +263,12 @@
 	"type": "spell",
 	"thumb": "content/images/cards/mirror.png"
 }, {
+	"name": "Graveyard",
+	"elixir": 5,
+	"arena": 5,
+	"type": "spell",
+	"thumb": "content/images/cards/graveyard.png"
+}, {
 	"name": "Ice Wizard",
 	"elixir": 3,
 	"arena": 5,
@@ -270,7 +282,7 @@
 	"thumb": "content/images/cards/mortar.png"
 }, {
 	"name": "Elixir Collector",
-	"elixir": 5,
+	"elixir": 6,
 	"arena": 6,
 	"type": "building",
 	"thumb": "content/images/cards/elixir_collector.png"
@@ -305,6 +317,12 @@
 	"type": "troop",
 	"thumb": "content/images/cards/royal_giant.png"
 }, {
+	"name": "Mega Minion",
+	"elixir": 3,
+	"arena": 7,
+	"type": "troop",
+	"thumb": "content/images/cards/mega_minion.png"
+}, {
 	"name": "Three Musketeers",
 	"elixir": 9,
 	"arena": 7,
@@ -334,6 +352,12 @@
 	"arena": 8,
 	"type": "troop",
 	"thumb": "content/images/cards/ice_spirit.png"
+}, {
+	"name": "Ice Golem",
+	"elixir": 2,
+	"arena": 8,
+	"type": "troop",
+	"thumb": "content/images/cards/ice_golem.png"
 }, {
 	"name": "Bowler",
 	"elixir": 5,
