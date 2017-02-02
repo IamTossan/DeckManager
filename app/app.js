@@ -33,27 +33,49 @@ myCRDeckApp.config(['$routeProvider', '$locationProvider', function($routeProvid
 }]);
 
 
-myCRDeckApp.service('deckService', ['$http', function($http){
-  var DeckService = this;
+myCRDeckApp.factory('deckService', ['$http', '$q', function($http, $q){
+  var factory = {
+    decks: false,
+    cards: false,
 
-  /*$http.get('data/decks.json').success(function(data){
-    DeckService.decks = data;
-  });*/
-  DeckService.decks = [
-    {
-      "name": "Miner cycle deck",
-      "deck": ["Miner", "Mini P.E.K.K.A", "Fireball", "Minions", "Zap", "Hog Rider", "Spear Goblins", "Barbarians"]
+    getDecks: function(){
+      var deferred = $q.defer();
+
+      if(factory.decks !== false){
+        deferred.resolve(factory.decks);
+      } else{
+        $http.get('data/decks.json').then(function(response){
+          factory.decks = response.data;
+          deferred.resolve(response.data);
+        }, function(error){
+          console.log('error : get decks.json');
+          deferred.reject(error);
+        });
+
+      }
+      return deferred.promise;
     },
-    {
-      "name": "Payfecta",
-      "deck": ["Princess", "Mini P.E.K.K.A", "Miner", "Ice Wizard", "Minions", "Zap", "Barbarians", "Ice Spirit"]
-    },
-    {
-      "name": "Hog Cycle",
-      "deck": ["Poison", "Hog Rider", "Elixir Collector", "Mini P.E.K.K.A", "Princess", "Zap", "Ice Spirit", "Skeletons"]
+
+    getCards: function(){
+      var deferred = $q.defer();
+
+      if(factory.cards !== false){
+        deferred.resolve(factory.cards);
+      } else{
+        $http.get('data/cards.json').then(function(response){
+          factory.cards = response.data;
+          deferred.resolve(response.data);
+        }, function(error){
+          console.log('error : get cards.json');
+          deferred.reject(error);
+        });
+
+      }
+      return deferred.promise;
     }
-  ];
 
+  }
+  return factory;
 
   DeckService.newDeck = {
     name: "",
@@ -63,15 +85,24 @@ myCRDeckApp.service('deckService', ['$http', function($http){
 }]);
 
 
-myCRDeckApp.controller('DeckController', ['$scope', '$http', '$location', 'deckService', function($scope, $http, $location, deckService){
+myCRDeckApp.controller('DeckController', ['$scope', '$location', 'deckService', function($scope, $location, deckService){
 
 
-  $http.get('data/cards.json').success(function(data){
-    $scope.cards = data;
+  $scope.cards = false;
+  $scope.decks = false;
+
+  deckService.getCards().then(function(response){
+    $scope.cards = response;
+  }, function(error){
+    console.error(error);
   });
 
+  deckService.getDecks().then(function(response){
+    $scope.decks = response;
+  }, function(error){
+    console.error(error);
+  });
 
-  $scope.decks = deckService.decks;
   $scope.newDeck = deckService.newDeck;
   $scope.arenaName = [
     "Training Camp",
@@ -131,7 +162,6 @@ myCRDeckApp.controller('DeckController', ['$scope', '$http', '$location', 'deckS
   $scope.removeDeck = function(deck){
     var removedDeck = $scope.decks.indexOf(deck);
     $scope.decks.splice(removedDeck, 1);
-
   };
 
   $scope.addCard = function(card) {

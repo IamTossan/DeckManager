@@ -10,5 +10,17 @@
   {
     "name": "deck 3",
     "deck": ["Arrow", "Bomber", "Archers", "Mini P.E.K.K.A", "Musketeer", "Giant", "Prince", "Fireball"]
+  },
+  {
+    "name": "Miner cycle deck",
+    "deck": ["Miner", "Mini P.E.K.K.A", "Fireball", "Minions", "Zap", "Hog Rider", "Spear Goblins", "Barbarians"]
+  },
+  {
+    "name": "Payfecta",
+    "deck": ["Princess", "Mini P.E.K.K.A", "Miner", "Ice Wizard", "Minions", "Zap", "Barbarians", "Ice Spirit"]
+  },
+  {
+    "name": "Hog Cycle",
+    "deck": ["Poison", "Hog Rider", "Elixir Collector", "Mini P.E.K.K.A", "Princess", "Zap", "Ice Spirit", "Skeletons"]
   }
 ]
