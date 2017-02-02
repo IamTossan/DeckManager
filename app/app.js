@@ -1,9 +1,9 @@
-var myCRDeckApp = angular.module('myCRDeckApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
 
 
 
-myCRDeckApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
 
   $locationProvider.html5Mode(true);
@@ -33,59 +33,10 @@ myCRDeckApp.config(['$routeProvider', '$locationProvider', function($routeProvid
 }]);
 
 
-myCRDeckApp.factory('deckService', ['$http', '$q', function($http, $q){
-  var factory = {
-    decks: false,
-    cards: false,
-
-    getDecks: function(){
-      var deferred = $q.defer();
-
-      if(factory.decks !== false){
-        deferred.resolve(factory.decks);
-      } else{
-        $http.get('data/decks.json').then(function(response){
-          factory.decks = response.data;
-          deferred.resolve(response.data);
-        }, function(error){
-          console.log('error : get decks.json');
-          deferred.reject(error);
-        });
-
-      }
-      return deferred.promise;
-    },
-
-    getCards: function(){
-      var deferred = $q.defer();
-
-      if(factory.cards !== false){
-        deferred.resolve(factory.cards);
-      } else{
-        $http.get('data/cards.json').then(function(response){
-          factory.cards = response.data;
-          deferred.resolve(response.data);
-        }, function(error){
-          console.log('error : get cards.json');
-          deferred.reject(error);
-        });
-
-      }
-      return deferred.promise;
-    }
-
-  }
-  return factory;
-
-  DeckService.newDeck = {
-    name: "",
-    deck: []
-  };
-
-}]);
 
 
-myCRDeckApp.controller('DeckController', ['$scope', '$location', 'deckService', function($scope, $location, deckService){
+
+app.controller('DeckController', ['$scope', '$location', 'deckService', function($scope, $location, deckService){
 
 
   $scope.cards = false;
